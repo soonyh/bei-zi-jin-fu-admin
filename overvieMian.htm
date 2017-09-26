@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="/hplus/favicon.ico">
+
+<!-- 引入jQuery -->
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+<link href="http://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<title>交易总览</title>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title ibox-title-red" >
+        <h5>交易概览</h5>
+        <div class="form-group form-inline clearfix">
+          <div class="pull-right">
+            <button type="button" onclick="query_tail(1);" class="btn btn-xs btn-white" id="btnday" >今日</button>
+            <button type="button" onclick="query_tail(2);" class="btn btn-xs btn-white" id="btnweek">周</button>
+            <button type="button" onclick="query_tail(3);" class="btn btn-xs btn-white" id="btnmonth">月</button>
+            <input placeholder="开始日期" id="start"  class="form-control" readonly placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" style="height: 26px;">
+            <input placeholder="结束日期" id="end" class="form-control" readonly  placeholder="YYYY-MM-DD"  onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" style="height: 26px;">
+            <select id="app" class="form-control" name ="app" style="height: 26px;font-size: 12px; padding-top:2px;">
+              <option  value="">请选择应用....</option>
+              <option  value="908502452092006400">商城1</option>
+            </select>
+            <button type="button" onclick="query_tail(0);" class="btn btn-xs btn-primary" >查询</button>
+            <a href="/userapp/mian.htm" class="btn btn-xs btn-primary"  id="showdiv" style="display: none;">返回</a> </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins ibox-content">
+      <div class="row">
+        <div class="col-xs-1-5">
+            <div class="widget yellow-bg">
+                <div class="row">
+                    <div class="col-xs-3 text-center">
+                        <i class="fa fa-industry fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <span> 成功交易额 </span>
+                        <h2 class="font-bold">¥ 4,232</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1-5">
+            <div class="widget navy-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-diamond fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <span> 成功笔数 </span>
+                        <h2 class="font-bold">26</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1-5">
+            <div class="widget red-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-bolt fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <span> 退款金额 </span>
+                        <h2 class="font-bold">¥ 260</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1-5">
+            <div class="widget gray-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-bar-chart fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <span> 手续费 </span>
+                        <h2 class="font-bold">¥ 12</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1-5">
+            <div class="widget lazur-bg">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-trophy fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <span> 净收入 </span>
+                        <h2 class="font-bold">¥ 12</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--         <div class="row">
+          <div class="col-sm-4 tongji-col">
+            <div class="ibox-diy row">
+              <div class="ibox-title-diy text-center">
+                <h4 class="font-18">交易金额汇总</h4>
+              </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 交易总额 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-success" id="span_trade_amount" >0</span> </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 成功交易额 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-success" id="span_success_amount" >0</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-4 tongji-col">
+            <div class="ibox-diy row">
+              <div class="ibox-title-diy text-center">
+                <h4 class="font-18">交易笔数汇总</h4>
+              </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 发起笔数 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-info" id="span_count" >0</span> </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 成功笔数 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-info" id="span_success_count" >0</span> </div>
+            </div>
+          </div>
+          <div class="col-sm-4 tongji-col">
+            <div class="ibox-diy row">
+              <div class="ibox-title-diy text-center">
+                <h4 class="font-18">退款汇总</h4>
+              </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 退款金额 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-warning" id="span_refund" >0</span> </div>
+              <div class="content-labelname col-lg-6  col-md-6  col-sm-6 col-xs-6 "> 退款笔数 </div>
+              <div class="content-data col-sm-6"> <span class="font-2em text-warning" id="span_refund_count" >0</span> </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- row end --> 
+        
+      </div>
+      <!-- 
+                     <div class="ibox-content" style="text-align: center;height:250px;">
+                        <div class="col-sm-2">
+	                    <div class="flot-chart-content" id="chart_trade_amount" style="width: 100%;height:220px; "></div>
+	                    </div>
+	                    <div class="col-sm-2">
+	                    <div class="flot-chart-content" id="chart_success_amount" style="width: 100%;height:220px; "></div>
+	                    </div>
+	                    <div class="col-sm-2">
+	                    <div class="flot-chart-content" id="chart_refund" style="width: 100%;height:220px;"></div>
+	                    </div>
+	                    <div class="col-sm-2">
+	                    <div class="flot-chart-content"  id="chart_count" style="width: 100%;height:220px;"></div>
+	                    </div>
+	                    <div class="col-sm-2">
+	                    <div class="flot-chart-content"  id="chart_success_count" style="width: 100%;height:220px;"></div>
+	                    </div>
+	                    <div class="col-sm-2">
+	                    <div class="flot-chart-content" id="chart_refund_count" style="width: 100%;height:220px;"></div>
+	                    </div>
+                    </div>
+
+                     --> 
+    </div>
+  </div>
+</div>
+<!-- 
+        <div class="row">
+               <div class="col-sm-12">
+               
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title" >
+                        <h5>订单量趋势图</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="flot-chart">
+                                    <div class="flot-chart-content" id="flot-shanghu-chart"></div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                </div>
+               
+           </div>
+           </div>
+            -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title ibox-title-blue" >
+        <h5>成功交易额统计图</h5>
+      </div>
+      <div class="ibox-content">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="moneyMain" style="width: 100%;height:250px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="/style/images/index/favicon.png" />
+<script src="http://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script> 
+
+<!-- 引入my97日期时间控件 --> 
+
+<!-- 扩展表单校验 --> 
+
+<!-- 三级联动 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script> 
+
+<!-- ajax 文件上传 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
+<link rel="stylesheet" href="http://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script> 
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/contabs.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script> 
+<script src="http://www.beizijinfu.com/js/colResizable-1.6.js"></script> 
+<script src="http://www.beizijinfu.com/js/ajaxfileupload.js"></script> 
+<script src="http://www.beizijinfu.com/js/beizi.validate.js"></script> 
+<script type="text/javascript">
+$(window).load(function(){
+	$("#loading").fadeOut();
+});
+
+
+
+//公共方法
+var pubMethod = {
+    bind: function (control,code) {
+        if (control == ''|| code == '')
+        {
+            return;
+        }
+
+        $('#'+ control).combobox({
+            url: '/dictionary/combox?code=' + code,
+            method: 'get',
+            valueField: 'id',
+            textField: 'text',
+            editable: false,
+            panelHeight: 'auto',
+            required:true
+        });
+    }
+}
+
+function logout(){
+	$.post( '/admin/logout.htm', function(result) {
+		if(result.success){
+			window.location.href='/index.htm';
+		}
+	}, 'json');
+}
+
+function editUserPwd() {
+	parent.layer.open({
+        type: 2,
+        title: "修改密码",
+        shade: 0.5,
+        area: ['900px', '500px'],
+        shift: 2,
+        btn: ['提交','关闭'], 
+        yes: function(index,layero){
+          var framefrom = parent.window.frames["layui-layer-iframe" + index];
+            framefrom.submitForm();
+        },
+        cancel: function(index,layero){
+
+          },
+        content: ['/user/editPwdPage.htm?id=907902763860750336'  ], 
+        end: function(result){ 
+          getfun();
+        }
+    });
+
+}
+
+	function FormatAfterDotNumber(ValueString, nAfterDotNum) {
+		var ValueString, nAfterDotNum;
+		var resultStr, nTen;
+		ValueString = "" + ValueString + "";
+		strLen = ValueString.length;
+		dotPos = ValueString.indexOf(".", 0);
+		if (dotPos == -1) {
+			resultStr = ValueString + ".";
+			for (i = 0; i < nAfterDotNum; i++) {
+				resultStr = resultStr + "0";
+			}
+			return resultStr;
+		} else {
+			if ((strLen - dotPos - 1) >= nAfterDotNum) {
+				nAfter = dotPos + nAfterDotNum + 1;
+				nTen = 1;
+				for (j = 0; j < nAfterDotNum; j++) {
+					nTen = nTen * 10;
+				}
+				resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+				return resultStr;
+			} else {
+				resultStr = ValueString;
+				for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+					resultStr = resultStr + "0";
+				}
+				return resultStr;
+			}
+		}
+	}
+</script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.tooltip.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.spline.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.resize.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.pie.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/flot/jquery.flot.symbol.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/peity/jquery.peity.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/demo/peity-demo.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jquery-ui/jquery-ui.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/easypiechart/jquery.easypiechart.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/sparkline/jquery.sparkline.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/demo/sparkline-demo.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/echarts/echarts-all.js"></script> 
+<script>
+    var colors=['#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD'];  
+        $(document).ready(function(){
+        	var value = window.location.href;
+	        var arr = value.substring(value.lastIndexOf('?') + 1,value.length).split('&'); 
+	        if(value.lastIndexOf('?') != -1){
+	           $("#showdiv").show();
+	           $("#app").val(arr[1].split('=')[1]);
+	        }
+        	
+	        query_tail(1);
+        			
+        });
+        
+        function query_tail(index){
+        	if(index > 0){
+        		getNowDate(index);
+        	}
+    		queryPieChart();
+    		//queryOrderTrend(); 
+    		queryOrderMoneyTrend();
+        }
+
+    	 
+        
+        function queryPieChart(){
+       	   $.ajax({
+      	            //提交数据的类型 POST GET
+      	            type:"POST",
+      	            //提交的网址
+      	            url:'' + '/ordertail/queryOverviePie.htm',
+      	            //提交的数据
+      	            data:{start:$("#start").val(),end:$("#end").val(),app:$("#app").val()},
+      	            //返回数据的格式
+      	            datatype: "json",
+
+      	            //成功返回之后调用的函数             
+      	            success:function(data){
+      	            	//var list = data;
+      	            
+      	            	var list = eval('(' + data + ')');
+      	       
+      	            	$.each(list,function(i, item) {
+      	            	     $("#span_"+item.id).html(item.value);
+      	            		// var _chart = echarts.init(document.getElementById("chart_"+item.id));//交易量
+      	            		 //var option = getoption(item.value,item.text,colors[i]);
+      	            		//_chart.setOption(option);
+      	            	});     
+      	            },
+      	            //调用执行后调用的函数
+      	            complete: function(XMLHttpRequest, textStatus){
+      	              
+      	            },
+      	            //调用出错执行的函数
+      	            error: function(){
+      	                //请求出错处理
+      	            }         
+      	         });
+
+       	  }
+        
+        function getoption(in_value,in_text,in_color){
+        	option_chart = {
+		    		tooltip: {
+		    	        trigger: 'item',
+		    	        formatter: "{b}: {c}"
+		    	    },
+		            title:{
+		    			text:in_text+"\n"+in_value,
+		    			x:"center",
+		    			y:"center"
+		    		},
+		            series: [
+		                {
+		                    name:'',
+		                    type: 'pie',
+		                    selectedMode: 'single', //单一选中模式
+		                    radius: ['50%', '85%'],
+		                    itemStyle: {
+		                        normal:{
+		                            label:{
+		                                show:false,
+		                                textStyle:{color:'#3c4858',fontSize:"18"},
+		                                formatter:function(val){   //让series 中的文字进行换行
+		                                    return val.name.split("-").join("\n");}
+		                            },
+		                            color:in_color,
+		                            labelLine:{
+		                                show:false
+		                            }
+		                        },
+		                        emphasis: {
+		                            shadowBlur: 10,
+		                            shadowOffsetX: 0,
+		                            shadowColor: 'rgba(0, 0, 0, 0.5)',
+		                            textColor:'#000'
+		                        }
+		                    },
+		                    data: [
+		                        {value:in_value, name:in_text}
+		                    ]
+		                }
+		            ]
+		        };
+        	return option_chart;
+        }
+        
+        //获取当天时间
+        function getNowDate(index){
+           var startmydate;
+           if(index == 1){
+        	   $("#btnday").attr("class", "btn btn-xs btn-white active"); 
+        	   $("#btnweek").attr("class", "btn btn-xs btn-white"); 
+        	   $("#btnmonth").attr("class", "btn btn-xs btn-white"); 
+        	   startmydate = new Date();
+           }else if(index == 2){
+        	   $("#btnday").attr("class", "btn btn-xs btn-white"); 
+        	   $("#btnweek").attr("class", "btn btn-xs btn-white active"); 
+        	   $("#btnmonth").attr("class", "btn btn-xs btn-white"); 
+        	   var d=new Date();
+        	   startmydate = new Date(d.getTime()-86400000*7);
+           }else{
+        	   $("#btnday").attr("class", "btn btn-xs btn-white"); 
+        	   $("#btnweek").attr("class", "btn btn-xs btn-white"); 
+        	   $("#btnmonth").attr("class", "btn btn-xs btn-white active"); 
+        	   var d=new Date();
+        	   startmydate = new Date(d.getTime()-86400000*30);
+           }    
+           
+           var startstr = "" + startmydate.getFullYear() + "/";
+           startstr += (startmydate.getMonth()+1) + "/";
+           startstr += startmydate.getDate() ;
+       	   
+	       $("#start").val(startstr);
+	       
+		   var endmydate = new Date();
+       	   var endstr = "" + endmydate.getFullYear() + "/";
+       	   endstr += (endmydate.getMonth()+1) + "/";
+       	   endstr += endmydate.getDate() ;
+	       $("#end").val(endstr);
+        }
+        
+        function getoption(in_value,in_text,in_color){
+        	option_chart = {
+		    		tooltip: {
+		    	        trigger: 'item',
+		    	        formatter: "{b}: {c}"
+		    	    },
+		            title:{
+		    			text:in_text+"\n"+in_value,
+		    		
+		    			textStyle:{
+		    				fontSize:12
+		    			},
+		    			x:"center",
+		    			y:"center"
+		    		},
+		            series: [
+		                {
+		                    name:'',
+		                    type: 'pie',
+		                    selectedMode: 'single', //单一选中模式
+		                    radius: ['50%', '85%'],
+		                    itemStyle: {
+		                        normal:{
+		                            label:{
+		                                show:false,
+		                                textStyle:{color:'#3c4858',fontSize:"18"},
+		                                formatter:function(val){   //让series 中的文字进行换行
+		                                    return val.name.split("-").join("\n");}
+		                            },
+		                            color:in_color,
+		                            labelLine:{
+		                                show:false
+		                            }
+		                        },
+		                        emphasis: {
+		                            shadowBlur: 10,
+		                            shadowOffsetX: 0,
+		                            shadowColor: 'rgba(0, 0, 0, 0.5)',
+		                            textColor:'#000'
+		                        }
+		                    },
+		                    data: [
+		                        {value:in_value, name:in_text}
+		                    ]
+		                }
+		            ]
+		        };
+        	return option_chart;
+        }
+        
+        function queryOrderTrend(){
+        	   $.ajax({
+       	            //提交数据的类型 POST GET
+       	            type:"POST",
+       	            //提交的网址
+       	            url:'' + '/ordertail/getOrderTrend.htm',
+       	            //提交的数据
+       	            data:{start:$("#start").val(),end:$("#end").val(),app:$("#app").val()},
+       	            //返回数据的格式
+       	            datatype: "json",
+
+       	            //成功返回之后调用的函数             
+       	            success:function(data){
+       	            	if($("#end").val() != $("#start").val()){
+       	            		getOrderTrend(data,'day');    
+       	            	}else{
+       	            		getOrderTrend(data,'hour');  
+       	            	}
+       	            },
+       	            //调用执行后调用的函数
+       	            complete: function(XMLHttpRequest, textStatus){
+       	              
+       	            },
+       	            //调用出错执行的函数
+       	            error: function(){
+       	                //请求出错处理
+       	            }         
+       	         });
+
+        	  }
+        
+        function getOrderTrend(in_date,timestr){
+        	//var str =JSON.stringify(in_date);  
+            var arr = JSON.parse(JSON.parse(in_date));
+           //arr = [[3600000,1],[7200000,1],[10800000,1]]
+        	var dataset=[
+			             {label:"订单数",data:arr,color:"#1ab394",bars:{show:true,align:"center",barWidth:24*60*60*600,lineWidth:0}}];
+			var options={
+				    xaxis: {
+				        mode: "time",
+				        tickSize: [1, timestr],
+				        tickLength: 0,
+				        axisLabel: "Date",
+				        axisLabelUseCanvas: true,
+				        axisLabelFontSizePixels: 12,
+				        axisLabelFontFamily: "Arial",
+				        axisLabelPadding: 10,
+				        color: "#838383"
+				    },
+				    yaxes: [{
+				        position: "left",
+				        color: "#838383",
+				        min:0,
+				        axisLabelUseCanvas: true,
+				        axisLabelFontSizePixels: 12,
+				        axisLabelFontFamily: "Arial",
+				        axisLabelPadding: 3
+				    },
+				    {
+				        position: "right",
+				        clolor: "#838383",
+				        axisLabelUseCanvas: true,
+				        axisLabelFontSizePixels: 12,
+				        axisLabelFontFamily: " Arial",
+				        axisLabelPadding: 67
+				    }],
+				    legend: {
+				        noColumns: 1,
+				        labelBoxBorderColor: "#000000",
+				        position: "nw"
+				    },
+				    grid: {
+				        hoverable: false,
+				        borderWidth: 0,
+				        color: "#838383"
+				    }
+				};
+		
+
+			$.plot($("#flot-shanghu-chart"),dataset,options);
+        }
+        
+        
+        
+        function queryOrderMoneyTrend(){
+     	   $.ajax({
+    	            //提交数据的类型 POST GET
+    	            type:"POST",
+    	            //提交的网址
+    	            url:'' + '/ordertail/getOrderMoneyTrend.htm',
+    	            //提交的数据
+    	            data:{start:$("#start").val(),end:$("#end").val(),app:$("#app").val()},
+    	            //返回数据的格式
+    	            datatype: "json",
+
+    	            //成功返回之后调用的函数             
+    	            success:function(data){
+    	            	getOrderoMoneyTrend(data,'day');    
+    	            },
+    	            //调用执行后调用的函数
+    	            complete: function(XMLHttpRequest, textStatus){
+    	              
+    	            },
+    	            //调用出错执行的函数
+    	            error: function(){
+    	                //请求出错处理
+    	            }         
+    	         });
+
+     	  }
+        
+        function getOrderoMoneyTrend(data){
+        	data = JSON.parse(data);
+        	//console.log(data);
+            //console.log(data.TRADE_TIME);
+            var titleDate = JSON.parse(data.TRADE_TIME);
+            var valueDate = JSON.parse(data.TRADE_AMOUNT);
+        	var moneyoption = {
+        		    title: {
+        		        x: 'center',
+        		        text: '成功交易额统计图',
+        		        subtext: '',
+        		        link: 'http://echarts.baidu.com/doc/example.html',
+        		      
+        		    },
+        		    tooltip: {
+        		        trigger: 'item'
+        		    },
+        		    calculable: true,
+        		    grid: {
+        		        borderWidth: 0,
+        		        y: 80,
+        		        y2: 140
+        		    },
+        		    xAxis: [
+        		        {
+        		            type: 'category',
+        		            show: true,
+        		            data: titleDate,
+        		            axisLabel:{
+        		            	interval:0,
+        		            	rotate:-30,
+        		            }
+        		        }
+        		    ],
+        		    yAxis: [
+        		        {
+        		            type: 'value',
+        		            show: false
+        		        }
+        		    ],
+        		    series: [
+        		        {
+        		            name: '交易额',
+        		            type: 'bar',
+        		            itemStyle: {
+        		                normal: {
+        		                    color: function(params) {
+        		                        // build a color map as your need.
+        		                        var colorList = [
+        		                                         '#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                                         ,'#C6E579','#C6E579','#C6E579','#C6E579'
+        		                        ];
+        		                        return colorList[params.dataIndex]
+        		                    },
+        		                    label: {
+        		                        show: true,
+        		                        position: 'top',
+        		                        formatter: '{c}元',
+        	        		            textStyle:{
+        	    		    				fontSize:8
+        	    		    			},
+        		                    }
+        		                }
+        		            },
+        		            data: valueDate,
+        		           
+        		        }
+        		    ]
+        		};
+        		     
+        	 var _chart = echarts.init(document.getElementById("moneyMain"));//交易额
+      		 
+      		_chart.setOption(moneyoption);
+        }
+    </script> 
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+<!-- Mirrored from www.zi-han.net/theme/hplus/index_v3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:49 GMT -->
+</html>
