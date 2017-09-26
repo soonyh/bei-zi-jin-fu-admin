@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+
+<head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <link rel="shortcut icon" href="http://www.beizijinfu.com/hplus/favicon.ico">
+
+  <!-- 引入jQuery -->
+  <link href="http://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+  <link href="http://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+  <link href="http://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+  <link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="edge" />
+  <title>列表页</title>
+  <style type="text/css">
+    .fa {
+      font-size: 30px;
+    }
+    h3 {
+      width: 300px;
+    }
+    address {}
+  </style>
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="col-sm-12">
+      <div class="ibox float-e-margins">
+        <div class="panel panel-success">
+          <div class="panel-body">
+            <div class="">
+              <a href="javascript:void(0);" onclick="goToNext();" class="btn btn-primary " style="float:right ;margin-right:20px; ">下一步</a>
+              <a href="javascript:void(0);" onclick="goFirst();" class="btn btn-default " style="float:right ;margin-right:20px; ">返回</a>
+            </div>
+            <h3>根据您的支付应用，选择需要的场景</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12" id="scene_selector">
+
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="contact-box" style="margin-bottom: 0px;">
+
+              <a href="javascript:void(0);" onclick="show('APP')">
+                <h3><strong>
+                        <p><i class="fa text-navy" id="APP" name="APP"></i>&nbsp;手机App支付</p>
+                        </strong>
+                        
+                        </h3>
+                <address>
+                </address>
+              </a>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="contact-box" style="margin-bottom: 0px;">
+
+              <a href="javascript:void(0);" onclick="show('WEB')">
+                <h3><strong>
+                        <p><i class="fa text-navy" id="WEB" name="WEB"></i>&nbsp;电脑网页支付</p>
+                        </strong>
+                        
+                        </h3>
+                <address>
+                </address>
+              </a>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="contact-box" style="margin-bottom: 0px;">
+
+              <a href="javascript:void(0);" onclick="show('WAP')">
+                <h3><strong>
+                        <p><i class="fa text-navy" id="WAP" name="WAP"></i>&nbsp;手机网页支付</p>
+                        </strong>
+                        
+                        </h3>
+                <address>
+                </address>
+              </a>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="contact-box" style="margin-bottom: 0px;">
+
+              <a href="javascript:void(0);" onclick="show('JSAPI')">
+                <h3><strong>
+                        <p><i class="fa text-navy" id="JSAPI" name="JSAPI"></i>&nbsp;微信公众号支付</p>
+                        </strong>
+                        
+                        </h3>
+                <address>
+                </address>
+              </a>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="contact-box" style="margin-bottom: 0px;">
+
+              <a href="javascript:void(0);" onclick="show('WXAPP')">
+                <h3><strong>
+                        <p><i class="fa text-navy" id="WXAPP" name="WXAPP"></i>&nbsp;微信小程序支付</p>
+                        </strong>
+                        
+                        </h3>
+                <address>
+                </address>
+              </a>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="http://www.beizijinfu.com/style/images/index/favicon.png" />
+
+<script src="http://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 引入my97日期时间控件 -->
+
+
+<!-- 扩展表单校验 -->
+
+
+<!-- 三级联动 -->
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script>
+
+<!-- ajax 文件上传 -->
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
+
+
+<link rel="stylesheet" href="http://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script>
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/contabs.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script>
+
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script>
+<script src="http://www.beizijinfu.com/js/colResizable-1.6.js"></script>
+<script src="http://www.beizijinfu.com/js/ajaxfileupload.js"></script>
+<script src="http://www.beizijinfu.com/js/beizi.validate.js"></script>
+
+
+<script type="text/javascript">
+  $(window).load(function() {
+    $("#loading").fadeOut();
+  });
+
+
+
+  //公共方法
+  var pubMethod = {
+    bind: function(control, code) {
+      if (control == '' || code == '') {
+        return;
+      }
+
+      $('#' + control).combobox({
+        url: '/dictionary/combox?code=' + code,
+        method: 'get',
+        valueField: 'id',
+        textField: 'text',
+        editable: false,
+        panelHeight: 'auto',
+        required: true
+      });
+    }
+  }
+
+  function logout() {
+    $.post('/admin/logout.htm', function(result) {
+      if (result.success) {
+        window.location.href = '/index.htm';
+      }
+    }, 'json');
+  }
+
+  function editUserPwd() {
+    parent.layer.open({
+      type: 2,
+      title: "修改密码",
+      shade: 0.5,
+      area: ['900px', '500px'],
+      shift: 2,
+      btn: ['提交', '关闭'],
+      yes: function(index, layero) {
+        var framefrom = parent.window.frames["layui-layer-iframe" + index];
+        framefrom.submitForm();
+      },
+      cancel: function(index, layero) {
+
+      },
+      content: ['/user/editPwdPage.htm?id=907902763860750336'],
+      end: function(result) {
+        getfun();
+      }
+    });
+
+  }
+
+  function FormatAfterDotNumber(ValueString, nAfterDotNum) {
+    var ValueString, nAfterDotNum;
+    var resultStr, nTen;
+    ValueString = "" + ValueString + "";
+    strLen = ValueString.length;
+    dotPos = ValueString.indexOf(".", 0);
+    if (dotPos == -1) {
+      resultStr = ValueString + ".";
+      for (i = 0; i < nAfterDotNum; i++) {
+        resultStr = resultStr + "0";
+      }
+      return resultStr;
+    } else {
+      if ((strLen - dotPos - 1) >= nAfterDotNum) {
+        nAfter = dotPos + nAfterDotNum + 1;
+        nTen = 1;
+        for (j = 0; j < nAfterDotNum; j++) {
+          nTen = nTen * 10;
+        }
+        resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+        return resultStr;
+      } else {
+        resultStr = ValueString;
+        for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+          resultStr = resultStr + "0";
+        }
+        return resultStr;
+      }
+    }
+  }
+</script>
+
+
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script>
+
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script>
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+  function show(targetname) {
+
+    var _class = "";
+    if (targetname == "WAP") {
+      _class = "fa-mobile";
+    } else if (targetname == "APP") {
+      _class = "fa-android";
+    } else if (targetname == "WEB") {
+      _class = "fa-desktop";
+    } else if (targetname == "JSAPI") {
+      _class = "fa-wechat";
+    } else if (targetname == "WXAPP") {
+      _class = "fa-whatsapp";
+    }
+
+    if ($('#' + targetname).hasClass('fa-check')) {
+      $('#' + targetname).removeClass('fa-check').addClass(_class);
+    } else {
+      $('#' + targetname).removeClass(_class).addClass('fa-check');
+    }
+
+  }
+
+  function goToNext() {
+    var scenes = "";
+    $(".fa-check").each(function(i) {
+      if (scenes != "") {
+        scenes += ",";
+      }
+      scenes += $(this).attr("id");
+    });
+
+    if (scenes == "") {
+      parent.layer.alert("请选择场景");
+      return;
+    }
+    window.location.href = 'channel.htm?scenes=' + scenes;
+  }
+
+  function goFirst() {
+    window.location.href = 'channels.htm';
+  }
+
+  $(document).ready(function() {
+
+    $(".fa").each(function(i) {
+      if ($(this).attr("id") == "WAP") {
+        $(this).addClass("fa-mobile");
+        $(this).parent().parent().parent().next().text("用户在商家手机网站进行支付");
+      } else if ($(this).attr("id") == "APP") {
+        $(this).addClass("fa-android");
+        $(this).parent().parent().parent().next().text("用户在商家APP内进行支付");
+      } else if ($(this).attr("id") == "WEB") {
+        $(this).addClass("fa-desktop");
+        $(this).parent().parent().parent().next().text("用户在商家PC网站进行支付");
+      } else if ($(this).attr("id") == "JSAPI") {
+        $(this).addClass("fa-wechat");
+        $(this).parent().parent().parent().next().text("用户在商家微信公众号进行支付");
+      } else if ($(this).attr("id") == "WXAPP") {
+        $(this).addClass("fa-whatsapp");
+        $(this).parent().parent().parent().next().text("用户在商家微信公众号小程序进行支付");
+      }
+    });
+
+    var scenes = ''.split(",");
+    for (i in scenes) {
+      show(scenes[i]);
+    };
+
+  });
+</script>
+
+</html>

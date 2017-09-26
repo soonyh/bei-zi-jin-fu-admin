@@ -1,0 +1,70 @@
+
+=====================================
+以当前目录下的“logo+navbar20170905.css” 
+覆盖
+“http://www.beizijinfu.com/hplus/css/logo+navbar20170905.css”
+并全局引用，发现个别页面没引用到（如：beizi_api.html，beizi_contacts.html）
+
+=====================================
+所有
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+替换成
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+作用是迫使IE以当前最新的版本渲染页面
+
+==============================================
+所有页面header部分添加
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+==================================
+ibox组件的每个ibox-title 添加3种（border-top）颜色
+
+ibox-title-red (首选)
+ibox-title-blue
+ibox-title-yellow
+
+==========================
+每个页面 body之后添加包裹层
+<div class="wrapper wrapper-content animated fadeInRight"/> 
+已有则无视
+主要是为了增加统一的 padding
+
+====================================
+启用iCheck组件
+
+所有checkbox 添加class="i-checks"
+
+并在页面初始化后执行如下脚本：
+
+    $(".i-checks").iCheck({
+      checkboxClass: "icheckbox_square-green",
+      radioClass: "iradio_square-green"
+    });
+
+注意：
+  如果渲染的checkbox是异步加载的，需在相应的回调方法里主动执行以上脚本（比如dataTable内的数据）
+  
+=======================================
+
+关于dataTable插件
+
+替换“http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js”为 当前目录hplus/plugins/下的版本
+
+并引入dataTables.fixedColumns.js 辅助插件，作用是 fixed 左右侧的指定列
+
+options 以“merOrdertailManager.htm”为例
+
+
+
+针对table内数据较多的场景，主要适配原则：
+1、在table上添加table-nowrap，强制文字不换行
+2、fixed 左侧“序列号”和右侧“操作项”（如：编辑之类的按钮）
+3、启用dataTable的水平滚动 "scrollX": true, 让“中间”内容水平滚动
+4、去掉“colResizable-1.6.js”的引用，避免干扰
+
+
+==============================
+mian.html
+
+.business_name::before{} 注释掉 ， 本页对应的引用也调整

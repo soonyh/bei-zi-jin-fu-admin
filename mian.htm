@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="http://www.beizijinfu.com/hplus/favicon.ico">
+
+<!-- 引入jQuery -->
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+<link href="http://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<title>应用管理</title>
+<style type="text/css">
+/*.business_name::before { content: ""; display: block; width: 78px; height: 78px; background: #e5e5e5 url(http://www.beizijinfu.com/hplus/img/noimg_icon.png); border-radius: 50%; margin: 0 auto; }*/
+.business_name { text-align: center; margin-bottom: 40px; }
+.business_name h1 { font-size: 16px; font-weight: bold; margin-top: 30px; }
+.business_name h2 { font-size: 12px; font-weight: bold; color: #98989a; margin-top: 10px; }
+.business_a { display: block; text-align: center; padding: 15px 0 10px; }
+.business_a span { font-size: 28px; display: block; margin-bottom: 5px; text-align: center; }
+.c_line { height: 75px; float: left; width: 0; border-right: 1px dashed #dcdcdc; margin-right: -2px; }
+.r_line { height: 0px; clear: both; border-top: 1px dashed #dcdcdc; }
+.addapp { display: block; text-align: center; height: 340px; }
+.addapp span { font-size: 30px; padding: 30px; background: #4c4c4c; color: #fff; border-radius: 50%; margin-top: 90px; }
+.addapp em { display: block; font-style: normal; margin-top: 20px; }
+</style>
+</head>
+<body class="gray-bg">
+<input type="hidden" id="appSize" value="1" />
+<input type="hidden" id="appMaxCount" value="3" />
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row" >
+    <div class="col-sm-3 ">
+      <div class="contact-box" style="height: 340px;">
+        <div class="business_name">
+          <i class="fa fa-cubes"></i>
+          <h1>商城1</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-6"> <a href="http://www.beizijinfu.com/ordertail/merOrdertailManager.htm?type=1&app=908502452092006400" class="business_a"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>查订单</a> </div>
+          <div class="c_line"></div>
+          <div class="col-sm-6"> <a href="http://www.beizijinfu.com/ordertail/overvieMian.htm?type=1&app=908502452092006400" class="business_a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>看报表</a> </div>
+        </div>
+        <div class="r_line"></div>
+        <div class="row">
+          <div class="col-sm-6"> <a href="#" onclick="editFun('908502452092006400');" class="business_a"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>参数</a> </div>
+          <div class="c_line"></div>
+          <div class="col-sm-6"> <a href="#" onclick="generateFun('908502452092006400');" class="business_a"><span class="fa fa-expeditedssl" aria-hidden="true"></span>秘钥</a> </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="col-sm-3 " id="addmaindiv">
+      <div class="contact-box"   id="div1" style="height: 340px;"> <a href="###" onclick="showAddUserApp();" class="addapp" > <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <em>添加应用</em> </a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="contact-box " style="display:none;height: 340px;" id="div2">
+        <div class="row m-b-sm m-t-sm" >
+          <div class="col-md-12" >
+            <div class="input-group" >
+              <input id="name" name="name" aria-hidden="true" class="form-control required input-sm"  style="margin-top: 100px;" type="text" placeholder="请输入应用名称" value="">
+              <a href="#" onclick="addUserAPP();" class="input-group-btn" ><i style="margin-top: 100px;" class=" btn-sm glyphicon glyphicon-ok label-primary"></i></a> </div>
+            <div class="input-group" >
+              <p></p>
+              <label id="form-control" class="help-block m-b-none">您只能创建3个应用</label>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+       // $(document).ready(function(){$(".contact-box").each(function(){animationHover(this,"pulse")})});
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="http://www.beizijinfu.com/style/images/index/favicon.png" />
+<script src="http://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script> 
+
+<!-- 引入my97日期时间控件 --> 
+
+<!-- 扩展表单校验 --> 
+
+<!-- 三级联动 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script> 
+
+<!-- ajax 文件上传 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
+<link rel="stylesheet" href="http://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script> 
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/contabs.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script> 
+<script src="http://www.beizijinfu.com/js/colResizable-1.6.js"></script> 
+<script src="http://www.beizijinfu.com/js/ajaxfileupload.js"></script> 
+<script src="http://www.beizijinfu.com/js/beizi.validate.js"></script> 
+<script type="text/javascript">
+$(window).load(function(){
+    $("#loading").fadeOut();
+});
+
+
+
+//公共方法
+var pubMethod = {
+    bind: function (control,code) {
+        if (control == ''|| code == '')
+        {
+            return;
+        }
+
+        $('#'+ control).combobox({
+            url: '/dictionary/combox?code=' + code,
+            method: 'get',
+            valueField: 'id',
+            textField: 'text',
+            editable: false,
+            panelHeight: 'auto',
+            required:true
+        });
+    }
+}
+
+function logout(){
+    $.post( '/admin/logout.htm', function(result) {
+        if(result.success){
+            window.location.href='/index.htm';
+        }
+    }, 'json');
+}
+
+function editUserPwd() {
+    parent.layer.open({
+        type: 2,
+        title: "修改密码",
+        shade: 0.5,
+        area: ['900px', '500px'],
+        shift: 2,
+        btn: ['提交','关闭'], 
+        yes: function(index,layero){
+          var framefrom = parent.window.frames["layui-layer-iframe" + index];
+            framefrom.submitForm();
+        },
+        cancel: function(index,layero){
+
+          },
+        content: ['/user/editPwdPage.htm?id=907902763860750336'  ], 
+        end: function(result){ 
+          getfun();
+        }
+    });
+
+}
+
+    function FormatAfterDotNumber(ValueString, nAfterDotNum) {
+        var ValueString, nAfterDotNum;
+        var resultStr, nTen;
+        ValueString = "" + ValueString + "";
+        strLen = ValueString.length;
+        dotPos = ValueString.indexOf(".", 0);
+        if (dotPos == -1) {
+            resultStr = ValueString + ".";
+            for (i = 0; i < nAfterDotNum; i++) {
+                resultStr = resultStr + "0";
+            }
+            return resultStr;
+        } else {
+            if ((strLen - dotPos - 1) >= nAfterDotNum) {
+                nAfter = dotPos + nAfterDotNum + 1;
+                nTen = 1;
+                for (j = 0; j < nAfterDotNum; j++) {
+                    nTen = nTen * 10;
+                }
+                resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+                return resultStr;
+            } else {
+                resultStr = ValueString;
+                for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+                    resultStr = resultStr + "0";
+                }
+                return resultStr;
+            }
+        }
+    }
+</script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script> 
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script> 
+<script type="text/javascript">
+    
+        function showAddUserApp(){
+            $("#div1").hide();
+            $("#div2").show();
+        }
+        
+        function addUserAPP(){
+            var name = $("#name").val();
+            var appSize = $("#appSize").val();
+            var appMaxCount = $("#appMaxCount").val();
+            if(name == ""){
+                parent.layer.alert("应用名称为空", {skin: 'layui-layer-lan'});
+                return ;
+            }
+            
+   
+           
+            if(parseInt(appSize) >= parseInt(appMaxCount)){
+                parent.layer.alert("应用管理只允许创建"+appMaxCount+"个", {skin: 'layui-layer-lan'});
+                $("#div1").show();
+                $("#div2").hide();
+                $("#name").val("");
+                return ;
+            }
+            
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url:'/userapp/mainadd.htm',
+                data:{name:name},
+                async: false,
+                error: function(request) {
+                    alert(request);
+                    parent.layer.alert(result.desc, {
+                        skin: 'layui-layer-lan' 
+                    });
+                },
+                success: function(result) {
+                    result = $.parseJSON(result);
+                    if (result.success) {
+                         /*  adddiv(result.obj);
+                          $("#div1").show();
+                          $("#div2").hide();
+                          $("#name").val("");
+                          appSize = parseInt(appSize) + 1;
+                          $("#appSize").val(appSize); */
+                          window.location.reload();
+                    }else{
+                         $("#div1").show();
+                         $("#div2").hide();
+                         $("#name").val("");
+                        parent.layer.alert(result.msg, {
+                            skin: 'layui-layer-lan' 
+                        });
+                    }
+                }
+            });
+        }
+        
+        function adddiv(obj){
+            $(".row").prepend('<div class="col-sm-3 "><div class="contact-box" style="height: 340px;"><div class="business_name"><h1>'+obj.name+'</h1></div>'
+                +'<div class="row">'
+                +'<div class="col-sm-6"><a href="http://www.beizijinfu.com/ordertail/merOrdertailManager.htm?type=1" class="business_a"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>查订单</a></div>'
+                +'<div class="c_line"></div>'
+                +'<div class="col-sm-6"><a href="http://www.beizijinfu.com/ordertail/overvieMian.htm?type=1" class="business_a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>看报表</a></div>'
+                +'</div>'
+                +'<div class="r_line"></div>'
+                +'<div class="row">'
+                +'<div class="col-sm-6"><a href="#" onclick="editFun(\''+obj.id+'\');" class="business_a"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>参数</a></div>'
+                +'<div class="c_line"></div>'
+                +'<div class="col-sm-6"><a href="#" onclick="generateFun(\''+obj.id+'\');" class="business_a"><span class="fa fa-expeditedssl" aria-hidden="true"></span>秘钥</a></div>'
+                +'</div>'
+                +'<div class="clearfix"></div>'
+                +'</div></div>');
+        }
+        
+        function editFun(id) {
+            parent.layer.open({
+                type: 2,
+                title: "参数",
+                shade: 0.5,
+                area: ['800px', '500px'],
+                shift: 2,
+                btn: ['编辑','关闭'], 
+                yes: function(index,layero){
+                    var framefrom = parent.window.frames["layui-layer-iframe" + index];
+                    if(framefrom.parent.$(".layui-layer-btn0").html() == '编辑'){
+                        framefrom.parent.$(".layui-layer-btn0").html("保存");
+                        framefrom.showDive();
+                    }else{
+                        framefrom.submitForm();
+                        framefrom.parent.$(".layui-layer-btn0").html("编辑");
+                    }
+                },
+                cancel: function(index,layero){
+                    window.location.reload();
+                  },
+                content: ['/userapp/editMianPage.htm?id=' + id], 
+                end: function(result){ 
+                    window.location.reload();
+                }
+            });
+        }
+        
+        function generateFun(id) {
+            parent.layer.open({
+                type: 2,
+                title: "密钥",
+                shade: 0.5,
+                area: ['800px', '250px'],
+                shift: 2,
+                btn: ['关闭'], 
+                cancel: function(index,layero){
+
+                  },
+                content: ['/userapp/generateOnePage.htm?id=' + id], 
+                end: function(result){ 
+                  
+                }
+            });
+        }
+    </script>
+</body>
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+</html>

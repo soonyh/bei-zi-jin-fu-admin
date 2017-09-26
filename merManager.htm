@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>用户提现申请</title>
+<style type="text/css">
+/*-----------申请提现(重写)-------------*/
+
+
+
+.ibox-title { }
+.ibox-title .a1 { font-size: 16px; line-height: 28px; font-weight: bold; padding: 0 20px 10px 20px; }
+.ibox-title .a1 i.yuan-icon { background: url('/hplus/img/yuan.svg') no-repeat 0px 0px; padding-right: 40px; width: 40px; margin-left: 5px; }
+.ibox-title .a1 span { padding: 0 20px; color: #f8ac59; }
+.ibox-title .a2 { font-size: 14px; line-height: 14px; font-weight: bold; padding: 10px 20px; }
+.ibox-title .a2 span { padding: 5px; }
+.ibox-title .a2 .can-m { color: #666; }
+.ibox-title .a2 .cannot-m { color: #999; padding-left: 30px; }
+.ibox-content { }
+.ibox-content .account-balance .form-inline i.i-icon { background: url('/hplus/img/yuan.svg') no-repeat 0px 0px; padding-right: 30px; width: 40px; margin-left: 5px; }
+.account-balance .form-inline { padding-right: 15px; }
+.account-balance .well { padding: 5px; margin-bottom: 10px; }
+.form-group .control-label { height: 28px; overflow: hidden; }
+.choices-bank { margin-bottom: 0px; }
+.form-inline .f1 span { padding: 5px; }
+.form-inline .f2 span { padding: 5px; }
+.form-inline .f2 .f2-1 { padding-left: 15px; }
+a.bank { display: block; height: 42px; border: 1px solid #eee; border-radius: 5px; padding: 12px 5px 5px; margin-bottom: 10px; width: auto; }
+a.bank:hover, a.bank:focus { border: 1px solid #3e8df1; }
+a.bank .s1 { text-indent: 20px; padding-left: 30px; padding-right: 0px; position: relative; top: -8px; }
+a.bank .s1-1 { padding-left: 10px; }
+.add-bank { padding: 5px 0 10px 50px; }
+.record { }
+.from .mid-btn { width: 100%; }
+.m-btn { margin: 0 auto; width: 100%; font-size: 14px; display: block; }
+.prand { width: 180px; }
+a.get-code { cursor: pointer; color: #3e8df1; padding: 7px 5px; border: 1px solid #dadada; min-width: 200px; }
+/*----时效说明----*/
+.timeliness { border-top: 1px dotted #999; color: #999; font-size: 11px; }
+.timeliness .tl-t { padding-top: 5px; font-weight: bold; padding-top: 10px; padding-bottom: 5px; letter-spacing: 1px; }
+.timeliness .tl-con { padding-left: 0px!important; }
+.timeliness .tl-con ol { padding: 3px 0; list-style: inside; }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="http://www.beizijinfu.com/hplus/favicon.ico">
+
+<!-- 引入jQuery -->
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+<link href="http://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+<link href="http://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+  <div class="row">
+    <div class="col-lg-4 col-md-5 col-sm-6 ui-sortable">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title ibox-title-red">
+          提现
+          <div class="pull-right"><div class="label label-primary"><i class="yuan-icon"></i>账户余额:<span>0.9</span>元</div>
+          <div class="label label-danger"><span class="can-m">可提现金额:<span class="can-m-n">0.9</span>元</span> </div>
+          <div class="label label-info"><span class="cannot-m">在途金额:<span class="cannot-m-n">0</span>元</span></div></div>
+        </div>
+        <div class="ibox-content container-fluid">
+          <div class="account-balance">
+            <div class="col-md-12">
+              <form class="row form-horizontal" id="addForm">
+                <div class="form-group">
+                  <label class="col-lg-4 col-sm-4 col-xs-4 control-label">提现金额(元):</label>
+                  <div class="col-lg-8 col-sm-8 col-xs-8">
+                    <input class="form-control required" type="number"  id="money"  onblur="formatFloat(this.value);" value=""  placeholder="0">
+                    <div class="help-block"><i class="i-icon"></i> <span class="f1"><span>手续费</span><span id="procedures_money">0.00元</span></span> <span class="f2"><span class="f2-1">实际到账</span><span id="Arrival">0.00元</span></span></div>
+                  </div>
+                </div>
+         
+                  <div class="form-group choices-bank">
+                    <label class="col-lg-4 col-sm-4 col-xs-4 control-label">选择银行卡：</label>
+                    <div class="col-lg-8 col-sm-8 form-cont col-xs-8"><p class="form-control-static">未添加</p><div class="help-block"><a href="/usercard/manager.htm?type=1">+添加银行卡</a></div></div>
+               
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-4 col-sm-4 col-xs-4 control-label">已绑定手机号：</label>
+                  <div class="col-lg-8 col-sm-8 col-xs-8">
+                    <p class="form-control-static">180****4514</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-4 col-sm-4 col-xs-4 control-label">验证码：&nbsp;&nbsp;</label>
+                  <div class="col-lg-8 col-sm-8 col-xs-8">
+                    <div class="input-group">
+                      <input type="text" class="prand form-control required" placeholder="验证码" id="rand1_1" name="rand" maxlength="6" value="" />
+                      <div class="input-group-btn"><a class="btn btn-default" onClick="">获取短信验证码</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 col-xs-12 mid-btn">
+                    <button class="btn btn-primary m-btn btn-rounded" type="button" onclick="withdrawDeposit()" >申请提现</button>
+                  </div>
+                </div>
+              </form>
+              <!--时效说明-->
+              <div class="timeliness">
+                <div class="tl-t">出款时效说明：</div>
+                <ul class="tl-con">
+                  <ol>
+                    ①&nbsp;5万以下 7*24小时支持实时；
+                  </ol>
+                  <ol>
+                    ②&nbsp;5万以上 只支持工作日9-17点实时；无限额；
+                  </ol>
+                </ul>
+              </div>
+              <!--/时效说明--> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-7 col-sm-6 ui-sortable record">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title ibox-title-blue">账单提现记录</div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-md-12 ">
+              <table id="dataGrid" class="table table-hover table-bordered table-nowrap">
+                <thead>
+                  <tr>
+                    <th>提现单号</th>
+                    <th>提现日期</th>
+                    <th>提现金额（元）</th>
+                    <th>手续费（元）</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6" class="text-center">暂无数据</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="shortcut icon" href="http://www.beizijinfu.com/style/images/index/favicon.png" />
+<script src="http://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script> 
+
+<!-- 引入my97日期时间控件 --> 
+
+<!-- 扩展表单校验 --> 
+
+<!-- 三级联动 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script> 
+
+<!-- ajax 文件上传 --> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script> 
+<script type="text/javascript" src="http://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
+<link rel="stylesheet" href="http://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script> 
+<script charset="utf-8" src="http://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/contabs.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script> 
+<script src="http://www.beizijinfu.com/js/colResizable-1.6.js"></script> 
+<script src="http://www.beizijinfu.com/js/ajaxfileupload.js"></script> 
+<script src="http://www.beizijinfu.com/js/beizi.validate.js"></script> 
+<script type="text/javascript">
+$(window).load(function(){
+    $("#loading").fadeOut();
+});
+
+
+
+//公共方法
+var pubMethod = {
+    bind: function (control,code) {
+        if (control == ''|| code == '')
+        {
+            return;
+        }
+
+        $('#'+ control).combobox({
+            url: '/dictionary/combox?code=' + code,
+            method: 'get',
+            valueField: 'id',
+            textField: 'text',
+            editable: false,
+            panelHeight: 'auto',
+            required:true
+        });
+    }
+}
+
+function logout(){
+    $.post( '/admin/logout.htm', function(result) {
+        if(result.success){
+            window.location.href='/index.htm';
+        }
+    }, 'json');
+}
+
+function editUserPwd() {
+    parent.layer.open({
+        type: 2,
+        title: "修改密码",
+        shade: 0.5,
+        area: ['900px', '500px'],
+        shift: 2,
+        btn: ['提交','关闭'], 
+        yes: function(index,layero){
+          var framefrom = parent.window.frames["layui-layer-iframe" + index];
+            framefrom.submitForm();
+        },
+        cancel: function(index,layero){
+
+          },
+        content: ['/user/editPwdPage.htm?id=907902763860750336'  ], 
+        end: function(result){ 
+          getfun();
+        }
+    });
+
+}
+
+    function FormatAfterDotNumber(ValueString, nAfterDotNum) {
+        var ValueString, nAfterDotNum;
+        var resultStr, nTen;
+        ValueString = "" + ValueString + "";
+        strLen = ValueString.length;
+        dotPos = ValueString.indexOf(".", 0);
+        if (dotPos == -1) {
+            resultStr = ValueString + ".";
+            for (i = 0; i < nAfterDotNum; i++) {
+                resultStr = resultStr + "0";
+            }
+            return resultStr;
+        } else {
+            if ((strLen - dotPos - 1) >= nAfterDotNum) {
+                nAfter = dotPos + nAfterDotNum + 1;
+                nTen = 1;
+                for (j = 0; j < nAfterDotNum; j++) {
+                    nTen = nTen * 10;
+                }
+                resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+                return resultStr;
+            } else {
+                resultStr = ValueString;
+                for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+                    resultStr = resultStr + "0";
+                }
+                return resultStr;
+            }
+        }
+    }
+</script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script> 
+<script src="http://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script> 
+<script type="text/javascript">
+  
+    var unpay_amount = '0.9';
+    var procedures_money = '2';
+    var min_money = '2';    
+    var phone = '1';
+    
+    /* 提现页面验证码部分 开始*/
+    $(function (){
+        readTime($('.get-code'),'register_email_readTime');
+        
+        $('.get-code').click(function(){
+
+            if(phone == ''){
+                parent.layer.alert("请先去个人资料中填写法人联系号码，再进行提现");
+                return;
+            }
+            
+            if(!canSend){
+                return;
+            }
+            layer.open({
+                id:"_layer",
+                type: 1,
+                skin:'layui-layer-lan',
+                title: ['请输入验证码', 'font-weight:bold;text-align:left'],
+                area: ['320px', '190px'], //宽高
+                btn: ['发送验证码','取消'],
+                content: "<div class='layui-login-input-lable' ><input class='layui-login-input-item' type='text' id='layer_rand'  name='layer_rand' maxlength='4' placeholder='验证码' required='required'><img class='layui-register-input-getyzm'  name='yzmImage' id='yzmImage' src='../imageshow.htm?' width='130' height='50' border='1' align='top' onclick='laodImage($(this))'></div>",
+                success: function(index,layero){
+                    $('#yzmImage').attr('src','/imageshow.htm?'+Math.random());
+                },
+                yes: function(index,layero){
+                    var layer_rand = $("#layer_rand").val();
+                    if(layer_rand.length>0){
+                         $.post('/withdraw/sendMsg.htm', {
+                                rsa:layer_rand
+                            }, function(result) {
+                                if(result.code=='1'){
+                                      parent.layer.alert(result.msg);               
+                                    canSend=false;
+                                    $(this).css("cursor","default");
+                                    var _date=new Date((new Date()).getTime()+30*1000);
+                                    $.cookie('register_phone_readTime', '30', { expires: _date, path: '/' }); 
+                                    readTime($('.get-code'),'register_phone_readTime');
+                                }else{
+                                      parent.layer.alert(result.msg);
+                                }
+                            }, 'JSON');
+                     }
+                    layer.close(index);//需要手动关闭窗口
+                },
+                cancel: function(index,layero){
+                    
+                },
+                
+            });
+        });
+    });
+
+
+    function laodImage(obj){
+        obj.attr('src','../imageshow.htm?'+Math.random());
+    }
+
+
+    var canSend=true;
+
+    var varTime;
+    function readTime(obj,cookie_name){
+        
+        
+        
+        var iTime=$.cookie(cookie_name); 
+
+        if(iTime==null||(iTime--)<=0){
+            if(varTime!=null){
+                clearTimeout(varTime);
+                obj.css("cursor","pointer");
+                obj.text('发送验证码');
+                canSend=true;
+            }
+            return;
+        }
+        
+        var _date=new Date((new Date()).getTime()+iTime*1000);
+        $.cookie(cookie_name, iTime, { expires: _date, path: '/' }); 
+
+        obj.text('重新获取('+iTime+')');
+        obj.css("cursor","default");
+        varTime=window.setTimeout(function(){readTime(obj,cookie_name)}, 1000); 
+        
+    }
+
+    if($.cookie('register_phone_readTime')!=null){
+        readTime($('.get-code'),'register_phone_readTime');
+    }
+
+
+    /* 提现页面验证码部分 结束*/
+    
+    function formatFloat(x){
+          var f = parseFloat(x); 
+          var f = Math.round(x*100)/100; 
+          var s = f.toString(); 
+          var rs = s.indexOf('.'); 
+          if (rs < 0) { 
+             rs = s.length; 
+             s += '.'; 
+           } 
+          while (s.length <= rs + 2) { 
+             s += '0'; 
+          } 
+          $("#money").val(s);
+          
+          if(parseFloat(s) <=  parseFloat(min_money)){
+            parent.layer.alert("提现金额必须大于:"+min_money+"元!");
+             return ;
+          }
+        
+          if(parseFloat(s) >=  parseFloat(unpay_amount)){
+            parent.layer.alert("提现金额大于可提现额度!");
+             return ;
+          }
+        
+          $("#procedures_money").html(parseFloat(procedures_money).toFixed(2));
+          $("#Arrival").html(((parseFloat(s)-parseFloat(procedures_money))).toFixed(2));
+    
+          
+     }
+    
+    $(function () {
+        $('#bankName').change(function(){
+            var _bankCode=$(this).find("option:selected").val();
+            var _bankName=$(this).find("option:selected").text();
+            $('#bank_code').val(_bankCode);
+            $('#bank_name').val(_bankName);
+        });
+    });
+     
+ 
+    
+    $(function () {
+        load_table();
+      });
+    
+    var _dataTable;
+    function load_table(){
+      _dataTable= $('#dataGrid').dataTable({
+        ajax:{
+              url:'' + '/withdraw/merdataGrid.htm',
+              type: "POST",
+              error: function (xhr, error, thrown) {
+
+                     },
+              data:function(data){
+                for (var i = 0; i < data.columns.length; i++) {
+                            column = data.columns[i];
+                            column.searchRegex = column.search.regex;
+                            column.searchValue = column.search.value;
+                            delete(column.search);
+                        }
+              }
+          },
+          bSort: false,
+          sAjaxDataProp:"rows",
+          bServerSide : true,
+          searching:false,
+          bLengthChange:true,
+          iDisplayStart:0,
+          pagingType: "full_numbers", 
+          order:[[ 2, "desc" ]],
+          bInfo:true,
+           columns:[
+                        {data:"id",sClass: "text-center"},
+                        {data:"createdate",sClass: "text-center"},
+                        {data:"money",sClass: "text-center"},
+                        {data:"procedures_money",sClass: "text-center"},
+                        {data:null,sClass: "text-center"},
+                        {data:null,sClass: "text-center"},
+                    
+                 ],
+              columnDefs: [
+            {
+                targets: 4,
+                data: "status",
+                render: function(data, type,row) {
+               
+                    if(row.status==1){
+                        return "<span class='label label-danger'>申请提现</span>";
+                    }else if(row.status==2){
+                        return "<span class='label label-primary'>已审核通过</span>";
+                    }else if(row.status==3){
+                        return "<span class='label label-primary'>待银行放款</span>";
+                    }else if(row.status==4){
+                        return "<span class='label label-primary'>已放款</span>";
+                    }else if(row.status==-1){
+                        return "<span class='label label-danger'>审核不通过</span>";
+                    }
+                    return ""
+                  }
+            }, 
+            {
+                targets: 5,
+                data: "status",
+                render: function(data, type,row) {
+               
+                    var str = '';
+                
+                     str += $.formatString('<a href="javascript:void(0)" onclick="toDetaile(\'{0}\');" class="btn btn-white btn-sm"><i class="fa fa-check-circle-o"></i> 查看明细 </a>', row.id);
+
+                    return str;
+                  }
+            } 
+          ],
+          oLanguage: {
+            "oPaginate": {
+            "sFirst": "首页",
+            "sPrevious": "前一页",
+            "sNext": "后一页",
+            "sLast": "尾页"
+            }
+            }
+        });
+
+      $(".checkall").click(function () {
+            var check = $(this).prop("checked");
+            $(".checkchild").prop("checked", check);
+      });
+
+      $(function() {
+        $("table").colResizable();
+      });
+    }
+    
+    function getfun(){
+        _dataTable.fnDraw();
+      }
+  
+function toDetaile(id) {
+        
+        parent.layer.open({
+            type: 2,
+            title: "提现明细",
+            shade: 0.5,
+            area: ['800px', '600px'],
+            shift: 2,
+            btn: ['关闭'], //按钮
+            cancel: function(index,layero){
+                    
+                },
+            content: ['/withdraw/toDetaile.htm?id=' +id], //iframe的url，no代表不显示滚动条
+           
+            
+            end: function(result){ //此处用于演示
+                treeData();
+            },
+           
+        });
+        
+    
+    }
+    
+    </script> 
+<script type="text/javascript">
+
+    
+        function withdrawDeposit(){
+
+            if (!$("#addForm").valid()){
+                return;
+            }
+            
+            formatFloat($("#money").val());
+            var money = $("#money").val();
+            if(parseFloat(money) <=  parseFloat(min_money)){
+                parent.layer.alert("提现金额必须大于:"+min_money+"元!");
+                 return ;
+            }
+            
+            if(parseFloat(money) >=  parseFloat(unpay_amount)){
+                parent.layer.alert("提现金额大于可提现额度!");
+                 return ;
+            }
+        
+            parent.layer.confirm('您的提现额度为:'+money+'元;手续费为:'+procedures_money+'元;实际到账金额为:'+((parseFloat(money)-parseFloat(procedures_money))).toFixed(2)+'元', {
+                btn: ['确定','取消'], 
+                shade: false 
+            }, function(){
+              $.post('/withdraw/merApply.htm', {
+                money : money,
+                bankCard : $('input:radio[name="bankCard"]:checked').val(),
+                rand : $("#rand1_1").val()
+              }, function(result) {
+                  parent.layer.alert(result.msg);
+                  window.location.reload();
+              }, 'JSON');
+            }, function(){
+
+            });
+            
+        }
+        
+        
+    </script>
+</body>
+</html>
