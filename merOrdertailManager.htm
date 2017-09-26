@@ -109,13 +109,14 @@
               <span class="label label-primary" style="line-height:19px;"><i class="fa fa-rmb"></i> 交易金额：<b>0</b>元</span>
               <span class="label label-danger" style="line-height:19px;"><i class="fa fa-retweet"></i> 退款金额：<b>0</b>元</span>
               <span class="label label-info" style="line-height:19px;"><i class="fa fa-text-o"></i> 订单数：<b>0</b>笔</span>
+              <span class="label" style="line-height:19px; cursor:pointer;" type="button" onclick="$('#search-bar').toggleClass('hidden')"><i class="fa fa-search"></i> 展开</span>
             </div>
             <ul class="category-list" style="padding: 0;" id="leftAppMuen">
               <div class="ibox-tools" id="showdiv" style="display: none;"> <a href="https://www.beizijinfu.com/userapp/mian.htm" class="btn btn-xs btn-primary">返回</a> </div>
             </ul>
           </div>
           <div class="ibox-content">
-            <form role="form" class="row">
+            <form role="form" class="row hidden animated fadeIn" id="search-bar">
               <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6">
                 <label for="" class="form-label">&nbsp;&nbsp;订单号：</label>
                 <input type="text" placeholder="请输入" id="trade_no" class="form-control">

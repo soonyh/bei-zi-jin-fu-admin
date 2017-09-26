@@ -1,313 +1,295 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<title>杯子金服-聚合支付、云金融、大数据SAAS服务平台</title>
-<meta name="keywords" content="杯子金服-聚合支付系统|API接口|大数据分析|移动支付|云金融服务提供商|快捷支付接口|企业代收代付">
-<meta name="description" content="支付接入提供商，聚合支付系统商，互联网金融服务商，简单，安全，稳定的聚合支付系统">
 
-<!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>杯子金服-聚合支付、云金融、大数据SAAS服务平台</title>
+  <meta name="keywords" content="杯子金服-聚合支付系统|API接口|大数据分析|移动支付|云金融服务提供商|快捷支付接口|企业代收代付">
+  <meta name="description" content="支付接入提供商，聚合支付系统商，互联网金融服务商，简单，安全，稳定的聚合支付系统">
+
+  <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-<link rel="shortcut icon" href="https://www.beizijinfu.com/hplus/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+  <link rel="shortcut icon" href="https://www.beizijinfu.com/hplus/favicon.ico">
 
-<!-- 引入jQuery -->
-<link href="https://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
-<link href="https://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
-<link href="https://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
-<script type="text/javascript">
-     </script>
+  <!-- 引入jQuery -->
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+  <link href="https://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+  <link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+  <script type="text/javascript">
+  </script>
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg  fixed-nav pace-done skin-1">
-<div id="wrapper"> 
-  <!--左侧导航开始-->
-  <nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="nav-close"><i class="fa fa-times-circle"></i> </div>
-    <div class="sidebar-collapse" id="navdiv">
-      <ul class="nav" id="side-menu">
-        <!-- 静态页测试 --> 
-        <!--  <li>
-                        <a href="https://www.beizijinfu.com/#">
-                            <i class="fa fa fa-desktop"></i>
-                            <span class="nav-label">主页</span>
-                                                    </a>
-                   </li>  --> 
-        
-        <!-- 静态页测试 -->
-        
-        <li> <a class="J_menuItem" href="overvieMian.htm"> <i class="fa fa fa-dashboard"></i> <span class="nav-label">交易总览</span> </a> </li>
-        <li> <a class="J_menuItem" href="https://www.beizijinfu.com/user/editPage.htm"> <i class="fa fa-file-text-o"></i> <span class="nav-label">个人资料</span> </a> </li>
-        <li> <a class="J_menuItem" href="mian.htm"> <i class="fa fa-cubes"></i> <span class="nav-label">应用中心</span> </a> </li>
-        <li> <a class="J_menuItem" href="channels.htm"> <i class="fa fa-money"></i> <span class="nav-label">支付通道</span> </a> </li>
-        <li> <a class="J_menuItem" href="merOrdertailManager.htm"> <i class="fa fa-list-alt"></i> <span class="nav-label">订单查询</span> </a> </li>
-        <li> <a class="J_menuItem" href="manager.htm"> <i class="fa fa-group"></i> <span class="nav-label">员工管理</span> </a> </li>
-        <li> <a class="J_menuItem" href="merManager.htm"> <i class="fa fa-money"></i> <span class="nav-label">申请提现</span> </a> </li>
-        <li> <a class="J_menuItem" href="beizi_contacts.html"> <i class="fa fa-support"></i> <span class="nav-label">技术支持</span> </a> </li>
-        <li> <a class="J_menuItem" href="beizi_api.html"> <i class="fa fa fa-flask"></i> <span class="nav-label">API接口</span> </a> </li>
-      </ul>
-    </div>
-  </nav>
-  <!--左侧导航结束--> 
-  <!--右侧部分开始-->
-  <div id="page-wrapper" class="gray-bg dashbard-1">
-    <div class="row border-bottom">
-      <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header"> <a href="https://www.beizijinfu.com/#" class="navbar-brand navbar-maximize hidden-xs visible" title="杯子金服logo"></a> <a href="https://www.beizijinfu.com/#" class="navbar-brand navbar-minimalize hidden visible-xs" title="杯子金服logo"></a>           
-          <!--  
+  <div id="wrapper">
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+      <div class="nav-close"><i class="fa fa-times-circle"></i> </div>
+      <div class="sidebar-collapse" id="navdiv">
+        <ul class="nav" id="side-menu">          
+          <li>
+            <a class="J_menuItem" href="overvieMian.htm"> <i class="fa fa fa-dashboard"></i> <span class="nav-label">交易总览</span> </a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa fa-file-text-o"></i> <span class="nav-label">个人资料</span> <span class="fa arrow"></span>
+            </a>
+
+            <ul class="nav nav-second-level collapse" aria-expanded="true" style="">
+              <li>
+                <a class="J_menuItem" href="https://www.beizijinfu.com/user/editPage.htm">主页示例一</a>
+              </li>
+              <li>
+                <a class="J_menuItem" href="index_v2.html">主页示例二</a>
+              </li>
+              <li>
+                <a class="J_menuItem" href="index_v3.html">主页示例三</a>
+              </li>
+              <li>
+                <a class="J_menuItem" href="index_v4.html">主页示例四</a>
+              </li>
+              <li>
+                <a href="index_v5.html" target="_blank">主页示例五</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="J_menuItem" href="mian.htm"> <i class="fa fa-cubes"></i> <span class="nav-label">应用中心</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="channels.htm"> <i class="fa fa-credit-card"></i> <span class="nav-label">支付通道</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="merOrdertailManager.htm"> <i class="fa fa-list-alt"></i> <span class="nav-label">订单查询</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="manager.htm"> <i class="fa fa-group"></i> <span class="nav-label">员工管理</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="merManager.htm"> <i class="fa fa-money"></i> <span class="nav-label">申请提现</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="beizi_contacts.html"> <i class="fa fa-support"></i> <span class="nav-label">技术支持</span> </a>
+          </li>
+          <li>
+            <a class="J_menuItem" href="beizi_api.html"> <i class="fa fa fa-flask"></i> <span class="nav-label">API接口</span> </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--左侧导航结束-->
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+      <div class="row border-bottom">
+        <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+          <div class="navbar-header">
+            <a href="https://www.beizijinfu.com/#" class="navbar-brand navbar-maximize hidden-xs visible" title="杯子金服logo"></a>
+            <a href="https://www.beizijinfu.com/#" class="navbar-brand hidden visible-xs" title="杯子金服logo"></a>
+            <!--  
                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="https://www.beizijinfu.com/#" title="收起左侧菜单"><i class="fa fa-bars"></i> </a>
                        <form role="search" class="navbar-form-custom" method="post" action="http://www.zi-han.net/theme/hplus/search_results.html">
                             <div class="form-group">
                                 <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
                             </div>
-                        </form> --> 
-        </div>
-        <ul class="nav navbar-top-links navbar-right">
-          
-          <!-- 
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="https://www.beizijinfu.com/#">
-                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-alerts">
-                                <li>
-                                    <a href="https://www.beizijinfu.com/mailbox.html">
-                                        <div>
-                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
-                                            <span class="pull-right text-muted small">4分钟前</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="https://www.beizijinfu.com/javascript:void(0)">
-                                        <div>
-                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
-                                            <span class="pull-right text-muted small">12分钟钱</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="https://www.beizijinfu.com/notifications.html">
-                                            <strong>查看所有 </strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                       -->
-          
-          <li class="hidden-xs"> <a href="https://www.beizijinfu.com/user/editPage.htm" class="J_menuItem" id="editUser"><i class="fa fa-user" style="font-weight:bold;"></i>18065184514 </a> </li>
-          <li class="hidden-xs"> <a href="https://www.beizijinfu.com/javascript:void(0);" onclick="editUserPwd()"><i class="fa fa-lock" style="font-weight:bold;"></i>修改密码 </a> </li>
-          
-          <!-- 
-                        <li class="hidden-xs">
-                            <a href="https://www.beizijinfu.com/javascript:void(0)"   data-index="0"><i class="fa fa-cloud-upload"></i> 升级</a>
-                        </li>
-                         --> 
-          <!-- <li class="dropdown hidden-xs">
-                            <a class="right-sidebar-toggle" aria-expanded="false">
-                                <i class="fa fa-tasks"></i> 主题
-                            </a>
-                        </li> -->
-        </ul>
-      </nav>
-    </div>
-    <div class="row content-tabs">
-      <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i> </button>
-      <a class="roll-nav navbar-minimalize" href="#"><i class="fa fa-bars"></i>
-                    </a>
-      <nav class="page-tabs J_menuTabs">
-        <div class="page-tabs-content"> <a href="javascript:;" class="active J_menuTab" data-id="overvieMian.htm">交易总览</a> </div>
-      </nav>
-      <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i> </button>
-      <div class="btn-group roll-nav roll-right">
-        <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span> </button>
-        <ul role="menu" class="dropdown-menu dropdown-menu-right">
-          <li class="J_tabShowActive"><a>定位当前选项卡</a> </li>
-          <li class="divider"></li>
-          <li class="J_tabCloseAll"><a>关闭全部选项卡</a> </li>
-          <li class="J_tabCloseOther"><a>关闭其他选项卡</a> </li>
-        </ul>
+                        </form> -->
+          </div>
+          <div class="hidden visible-xs-inline" style="position:absolute; top:14px; right:10px;"> <a class="btn btn-primary" href="#" onclick="$('body').toggleClass('mini-navbar')"><i class="fa fa-bars"></i></a> </div>
+          <ul class="nav navbar-top-links navbar-right">
+            <li> <a href="https://www.beizijinfu.com/user/editPage.htm" class="J_menuItem" id="editUser"><i class="fa fa-user" style="font-weight:bold;"></i>18065184514 </a> </li>
+            <li> <a href="https://www.beizijinfu.com/javascript:void(0);" onclick="editUserPwd()"><i class="fa fa-lock" style="font-weight:bold;"></i>修改密码 </a> </li>            
+          </ul>
+        </nav>
       </div>
-      <a href="https://www.beizijinfu.com/javascript:logout()" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a> </div>
-    <div class="row J_mainContent" id="content-main">
-      <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="overvieMian.htm" frameborder="0" data-id="overvieMian.htm" seamless></iframe>
+      <div class="row content-tabs">
+        <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i> </button>
+        <a class="roll-nav navbar-minimalize" href="#"><i class="fa fa-bars"></i></a>
+        <nav class="page-tabs J_menuTabs">
+          <div class="page-tabs-content"> <a href="javascript:;" class="active J_menuTab" data-id="overvieMian.htm">交易总览</a> </div>
+        </nav>
+        <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i> </button>
+        <div class="btn-group roll-nav roll-right">
+          <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span> </button>
+          <ul role="menu" class="dropdown-menu dropdown-menu-right">
+            <li class="J_tabShowActive"><a>定位当前选项卡</a> </li>
+            <li class="divider"></li>
+            <li class="J_tabCloseAll"><a>关闭全部选项卡</a> </li>
+            <li class="J_tabCloseOther"><a>关闭其他选项卡</a> </li>
+          </ul>
+        </div>
+        <a href="https://www.beizijinfu.com/javascript:logout()" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a> </div>
+      <div class="row J_mainContent" id="content-main">
+        <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="overvieMian.htm" frameborder="0" data-id="overvieMian.htm" seamless></iframe>
+      </div>
+      <div class="footer">
+        <div class="pull-right">&copy; 2017-2020 <a href="https://www.beizijinfu.com/https://www.beizijinfu.com" target="_blank">杯子金服（福建）科技有限公司</a> </div>
+      </div>
     </div>
-    <div class="footer">
-      <div class="pull-right">&copy; 2017-2020 <a href="https://www.beizijinfu.com/https://www.beizijinfu.com" target="_blank">杯子金服（福建）科技有限公司</a> </div>
-    </div>
+    <!--右侧部分结束-->
+    <!--右侧边栏开始-->
+
+    <!--右侧边栏结束-->
+    <!--mini聊天窗口开始-->
   </div>
-  <!--右侧部分结束--> 
-  <!--右侧边栏开始--> 
-  
-  <!--右侧边栏结束--> 
-  <!--mini聊天窗口开始--> 
-</div>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-<link rel="shortcut icon" href="https://www.beizijinfu.com/style/images/index/favicon.png" />
-<script src="https://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script> 
-<!-- <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+  <link rel="shortcut icon" href="https://www.beizijinfu.com/style/images/index/favicon.png" />
+  <script src="https://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script>
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>  -->
 
-<!-- 引入my97日期时间控件 --> 
+  <!-- 引入my97日期时间控件 -->
 
-<!-- 扩展表单校验 --> 
+  <!-- 扩展表单校验 -->
 
-<!-- 三级联动 --> 
-<script type="text/javascript" src="https://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script> 
+  <!-- 三级联动 -->
+  <script type="text/javascript" src="https://www.beizijinfu.com/jslib/select/area.js" charset="utf-8"></script>
 
-<!-- ajax 文件上传 --> 
-<script type="text/javascript" src="https://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script> 
-<script type="text/javascript" src="https://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
-<link rel="stylesheet" href="https://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
-<script charset="utf-8" src="https://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script> 
-<script charset="utf-8" src="https://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script> 
-<!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>  -->
-<!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>  -->
-<!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script>  -->
-<!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>  -->
-<!-- <script src="https://www.beizijinfu.com/hplus/js/contabs.min.js"></script>  -->
-<!-- <script src="https://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script>  -->
-<script src="https://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script> 
-<script src="https://www.beizijinfu.com/js/colResizable-1.6.js"></script> 
-<script src="https://www.beizijinfu.com/js/ajaxfileupload.js"></script> 
-<script src="https://www.beizijinfu.com/js/beizi.validate.js"></script> 
-<script type="text/javascript">
-$(window).load(function(){
-    $("#loading").fadeOut();
-});
+  <!-- ajax 文件上传 -->
+  <script type="text/javascript" src="https://www.beizijinfu.com/jslib/ajaxfileupload.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://www.beizijinfu.com/jslib/extJquery.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://www.beizijinfu.com/kindeditor-4.1.10/themes/default/default.css" />
+  <script charset="utf-8" src="https://www.beizijinfu.com/kindeditor-4.1.10//kindeditor-min.js"></script>
+  <script charset="utf-8" src="https://www.beizijinfu.com/kindeditor-4.1.10//lang/zh_CN.js"></script>
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>  -->
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>  -->
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script>  -->
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>  -->
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/contabs.min.js"></script>  -->
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script>  -->
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script>
+  <script src="https://www.beizijinfu.com/js/colResizable-1.6.js"></script>
+  <script src="https://www.beizijinfu.com/js/ajaxfileupload.js"></script>
+  <script src="https://www.beizijinfu.com/js/beizi.validate.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $("#loading").fadeOut();
+    });
 
 
 
-//公共方法
-var pubMethod = {
-    bind: function (control,code) {
-        if (control == ''|| code == '')
-        {
-            return;
+    //公共方法
+    var pubMethod = {
+      bind: function(control, code) {
+        if (control == '' || code == '') {
+          return;
         }
 
-        $('#'+ control).combobox({
-            url: '/dictionary/combox?code=' + code,
-            method: 'get',
-            valueField: 'id',
-            textField: 'text',
-            editable: false,
-            panelHeight: 'auto',
-            required:true
+        $('#' + control).combobox({
+          url: '/dictionary/combox?code=' + code,
+          method: 'get',
+          valueField: 'id',
+          textField: 'text',
+          editable: false,
+          panelHeight: 'auto',
+          required: true
         });
+      }
     }
-}
 
-function logout(){
-    $.post( '/admin/logout.htm', function(result) {
-        if(result.success){
-            window.location.href='/index.htm';
+    function logout() {
+      $.post('/admin/logout.htm', function(result) {
+        if (result.success) {
+          window.location.href = '/index.htm';
         }
-    }, 'json');
-}
+      }, 'json');
+    }
 
-function editUserPwd() {
-    parent.layer.open({
+    function editUserPwd() {
+      parent.layer.open({
         type: 2,
         title: "修改密码",
         shade: 0.5,
         area: ['900px', '500px'],
         shift: 2,
-        btn: ['提交','关闭'], 
-        yes: function(index,layero){
+        btn: ['提交', '关闭'],
+        yes: function(index, layero) {
           var framefrom = parent.window.frames["layui-layer-iframe" + index];
-            framefrom.submitForm();
+          framefrom.submitForm();
         },
-        cancel: function(index,layero){
+        cancel: function(index, layero) {
 
-          },
-        content: ['/user/editPwdPage.htm?id=907902763860750336'  ], 
-        end: function(result){ 
+        },
+        content: ['/user/editPwdPage.htm?id=907902763860750336'],
+        end: function(result) {
           getfun();
         }
-    });
+      });
 
-}
+    }
 
     function FormatAfterDotNumber(ValueString, nAfterDotNum) {
-        var ValueString, nAfterDotNum;
-        var resultStr, nTen;
-        ValueString = "" + ValueString + "";
-        strLen = ValueString.length;
-        dotPos = ValueString.indexOf(".", 0);
-        if (dotPos == -1) {
-            resultStr = ValueString + ".";
-            for (i = 0; i < nAfterDotNum; i++) {
-                resultStr = resultStr + "0";
-            }
-            return resultStr;
-        } else {
-            if ((strLen - dotPos - 1) >= nAfterDotNum) {
-                nAfter = dotPos + nAfterDotNum + 1;
-                nTen = 1;
-                for (j = 0; j < nAfterDotNum; j++) {
-                    nTen = nTen * 10;
-                }
-                resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
-                return resultStr;
-            } else {
-                resultStr = ValueString;
-                for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
-                    resultStr = resultStr + "0";
-                }
-                return resultStr;
-            }
+      var ValueString, nAfterDotNum;
+      var resultStr, nTen;
+      ValueString = "" + ValueString + "";
+      strLen = ValueString.length;
+      dotPos = ValueString.indexOf(".", 0);
+      if (dotPos == -1) {
+        resultStr = ValueString + ".";
+        for (i = 0; i < nAfterDotNum; i++) {
+          resultStr = resultStr + "0";
         }
+        return resultStr;
+      } else {
+        if ((strLen - dotPos - 1) >= nAfterDotNum) {
+          nAfter = dotPos + nAfterDotNum + 1;
+          nTen = 1;
+          for (j = 0; j < nAfterDotNum; j++) {
+            nTen = nTen * 10;
+          }
+          resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+          return resultStr;
+        } else {
+          resultStr = ValueString;
+          for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+            resultStr = resultStr + "0";
+          }
+          return resultStr;
+        }
+      }
     }
-</script> 
-<script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script> 
-<!-- <script src="https://www.beizijinfu.com/hplus/js/jquery.min.js?v=2.1.4"></script>  -->
-<script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script> 
-<!-- <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>  -->
-<script src="https://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script> 
-<script type="text/javascript" src="https://www.beizijinfu.com/hplus/js/contabs.min.js"></script> 
-<script src="https://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>
+  </script>
+  <script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script>
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/jquery.min.js?v=2.1.4"></script>  -->
+  <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>
+  <!-- <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>  -->
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script>
+  <script type="text/javascript" src="https://www.beizijinfu.com/hplus/js/contabs.min.js"></script>
+  <script src="https://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>
 </body>
+
 </html>

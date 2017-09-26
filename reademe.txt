@@ -68,3 +68,24 @@ options 以“merOrdertailManager.htm”为例
 mian.html
 
 .business_name::before{} 注释掉 ， 本页对应的引用也调整
+
+=====================================
+index.html
+
+1、把‘navbar-minimalize’样式去掉
+<a href="https://www.beizijinfu.com/#" class="navbar-brand navbar-minimalize hidden visible-xs" title="杯子金服logo"></a>
+已经在标签切换栏添加了，重复会导致‘min-navbar’场景下，二级菜单打开失常
+
+2、添加
+<div class="hidden visible-xs-inline" style="position:absolute; top:14px; right:10px;"> <a class="btn btn-primary" href="#" onclick="$('body').toggleClass('mini-navbar')"><i class="fa fa-bars"></i></a> </div>
+
+
+
+
+
+
+
+
+
+
+

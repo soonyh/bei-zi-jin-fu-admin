@@ -46,13 +46,13 @@ body.fixed-sidebar .navbar-static-side {
 }
 /*-----------改logo的响应式-------------*/
 
-.skin-1 .navbar-minimalize {
+/*.skin-1 .navbar-minimalize {
     background: #0e9aef;
     border-color: #0e9aef;
     width: 60px;
     margin:8px 2px 0 8px;
     background: url(../../css/images/logo/new-sh.svg) no-repeat 0px 5px;
-}
+}*/
 .navbar-maximize{
     width: 287px!important;
     margin: 8px 5px 0;
@@ -85,10 +85,15 @@ body,button,input,select,textarea {font-family: 'helvetica neue', arial, 'hiragi
 .fixed-nav.skin-1 .navbar-fixed-top a:hover,.fixed-nav.skin-1 .navbar-fixed-top a:active{background-color: #0773ef;}
 /* 侧边栏 */
 .skin-1 .navbar-static-side{background-color: #f4f4f4;}
-.skin-1 .navbar-static-side .nav>li>a{font-size:14px; font-weight:normal; padding:12px 20px 12px 25px; border-top: 1px solid #fff; border-bottom: 1px solid #ddd; color:#555}
-.skin-1 .navbar-static-side .nav>li>a:hover{background-color:#f9f9f9!important; color:#555555;}
-.skin-1 .navbar-static-side .nav>li>a>i{color:#555555; }
+#side-menu>li>a{font-size:14px; font-weight:normal; padding:12px 20px 12px 25px; border-top: 1px solid #fff; border-bottom: 1px solid #ddd; color:#555}
+#side-menu>li>a:hover,#side-menu>li>a:focus{background-color:#f9f9f9!important; color:#555555;}
+#side-menu>li>a>i{color:#555555; }
+.fixed-sidebar.mini-navbar #side-menu>li.active{border-left-width: 0px;}
+#side-menu>li.active{border-left: 4px solid #19aa8d; background-color: #f9f9f9!important;}
+#side-menu>li.active>a{background-color: #f9f9f9!important;}
 /* 侧边栏拓宽 170px -> 220px */
+/* 二级菜单 */
+.skin-1 .navbar-default .nav.nav-second-level a:hover{background-color: #e8ebed; color: inherit;}
 body.canvas-menu .navbar-static-side, body.fixed-sidebar .navbar-static-side{width:220px;}
 .skin-1 #page-wrapper{margin-left:220px;}
 /* 标签菜单条 */
@@ -140,6 +145,22 @@ div.DTFC_RightBodyWrapper table.dataTable{margin-top: 0!important;}
 .form-cell > .form-control{display: table-cell;}
 .form-cell > .input-group > .form-contrl{display: table-cell; width: 50%;}
 
+/*  */
+.skin-1 .navbar-brand.visible-xs {
+    background: #0e9aef;
+    border-color: #0e9aef;
+    width: 60px;
+    margin: 8px 2px 0 8px;
+    background: url(http://www.beizijinfu.com/css/images/logo/new-sh.svg) no-repeat 0px 5px;
+}
+.skin-1 .navbar-brand.visible-xs:hover{background-color: transparent!important;}
+@media (max-width: 767px){
+  .visible-xs-inline {
+    display: inline-block!important;
+   }
+}
+
+.visible-xs{}
 /* --------- 五等分 --------- */
 .col-xs-1-5, .col-sm-1-5, .col-md-1-5, .col-lg-1-5,
 .col-xs-2-5, .col-sm-2-5, .col-md-2-5, .col-lg-2-5,
