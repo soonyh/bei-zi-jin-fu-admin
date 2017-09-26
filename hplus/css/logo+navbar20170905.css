@@ -112,7 +112,7 @@ body.gray-bg{background-color: #f0f8ff;}
 .contact-box{box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); -webkit-box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1); border-radius: 3px; -webkit-border-radius:3px;}
 .contact-box:hover{border-color: #ccc; box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2); -webkit-box-shadow:0px 1px 20px rgba(0, 0, 0, 0.2);}
 .contact-box .business_name i{font-size: 50px; color: #f56954;}
-.contact-box .business_name-icon{display: block; width: 78px; height: 78px; background: #e5e5e5 url(http://www.beizijinfu.com/hplus/img/noimg_icon.png); border-radius: 50%; margin: 0 auto;}
+.contact-box .business_name-icon{display: block; width: 78px; height: 78px; background: #e5e5e5 url(https://www.beizijinfu.com/hplus/img/noimg_icon.png); border-radius: 50%; margin: 0 auto;}
 /* ibox */
 .ibox{border-radius:0 0 3px 3px; -webkit-border-radius:0 0 3px 3px; }
 .ibox-title{border-radius:3px 3px 0 0; -webkit-border-radius:3px 3px 0 0;}

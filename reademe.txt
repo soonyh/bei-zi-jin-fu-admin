@@ -2,7 +2,7 @@
 =====================================
 以当前目录下的“logo+navbar20170905.css” 
 覆盖
-“http://www.beizijinfu.com/hplus/css/logo+navbar20170905.css”
+“https://www.beizijinfu.com/hplus/css/logo+navbar20170905.css”
 并全局引用，发现个别页面没引用到（如：beizi_api.html，beizi_contacts.html）
 
 =====================================
@@ -49,7 +49,7 @@ ibox-title-yellow
 
 关于dataTable插件
 
-替换“http://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js”为 当前目录hplus/plugins/下的版本
+替换“https://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js”为 当前目录hplus/plugins/下的版本
 
 并引入dataTables.fixedColumns.js 辅助插件，作用是 fixed 左右侧的指定列
 
