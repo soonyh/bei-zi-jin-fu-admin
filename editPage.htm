@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="https://www.beizijinfu.com/hplus/favicon.ico">
+
+  <!-- 引入jQuery -->
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap-spinner.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/style.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/jsTree/style.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/select/bootstrap-select.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/animate.min.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/jquery.treegrid.css" rel="stylesheet">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/toastr/toastr.min.css">
+  <link href="https://www.beizijinfu.com/hplus/favicon.ico" rel="shortcut icon">
+  <link href="https://www.beizijinfu.com/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+  <link href="hplus/plugins/webuploader/webuploader.css" rel="stylesheet">
+  <link href="hplus/css/logo+navbar20170905.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        用户名错误
+   </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <form method="get" class="" id="editForm">
+          <div class="ibox">
+            <div class="ibox-title ibox-title-red">
+              <h5>个人资料</h5>
+              <div class="pull-right" style="margin-top:-4px">
+                <a href="#" onclick="submitForm();" class="btn btn-primary btn-sm">保存</a>
+              </div>
+            </div>
+            <div class="ibox-content">
+              <h3 class="form-section">基本信息</h3>
+              <div class="hr-line-dashed"></div>
+              <div class="row">
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">商户全称</label>
+                  <input type="text" class="form-control required" name="mer_name" value="" maxlength="64"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3 has-error">
+                  <label class="control-label">商户类型</label>
+                  <select class="form-control" id="usertype" name="usertype">
+                    <option value="" selected>请选择</option>
+                    <option value="1">企业</option>
+                    <option value="2" selected='selected'>个人</option>
+                  </select>
+                </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">省份／城市</label>
+                  <div class="row">
+                    <div class="col-xs-4" style="padding-right:5px;">
+                      <select class="form-control" id="province" name="province"></select>
+                    </div>
+                    <div class="col-xs-4" style="padding:0 5px;">
+                      <select class="form-control" id="province" name="province"></select>
+                    </div>
+                    <div class="col-xs-4" style="padding-left:5px;">
+                      <select class="form-control" id="province" name="province"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">联系地址</label>
+                  <input type="text" class="form-control" name="addr" value="" maxlength="128"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">营业执照号</label>
+                  <input type="text" class="form-control isLetter&Number" name="business_license" value="34343434" maxlength="64"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">营业执照有效期(开始)</label>
+                  <div class="input-group">
+                    <input class="form-control layer-date" value="" name="business_license_starttime" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                  </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">营业执照有效期(终止)</label>
+                  <div class="input-group">
+                    <input class="form-control layer-date" value="" name="business_license_endtime" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                  </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">行业</label>
+                  <div class="row">
+                    <div class="col-xs-4" style="padding-right:5px;">
+                      <select data-category1="---- 主类目 ----" class="form-control" id="category1" name="category1" onchange="change_category($(this),$('#category2'),$('#category3'))"></select>
+                    </div>
+                    <div class="col-xs-4" style="padding:0 5px">
+                      <select data-category2="---- 子类目 ----" class="form-control" id="category2" name="category2" onchange="change_category($(this),$('#category3'))"></select>
+                    </div>
+                    <div class="col-xs-4" style="padding-left:5px;">
+                      <select data-category3="---- 子类目 ----" class="form-control" id="category3" name="category3"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">经营范围</label>
+                  <input type="text" class="form-control" name="business_scope" value="" maxlength="512"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">法人姓名</label>
+                  <input type="text" class="form-control" name="legal_persion" value="" maxlength="16"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">法人手机</label>
+                  <input type="number" class="form-control isMobile" name="legal_tel" value="18065184514"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">法人证件号</label>
+                  <input type="text" class="form-control isCardNo" name="legal_cardno" value="350783199009017545"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">联系人</label>
+                  <input type="text" class="form-control" name="linkman" value="" maxlength="16"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">联系人手机</label>
+                  <input type="number" class="form-control isMobile" name="linkman_tel" value="18065184514"> </div>
+                <div class="form-group col-xs-12 col-sm-4 col-md-3">
+                  <label class="control-label">联系人身份证</label>
+                  <input type="text" class="form-control isCardNo" name="linkman_cardno" value="350783199009017543"> </div>
+              </div>
+
+              <h3 class="form-section">上传图片</h3>
+              <div class="hr-line-dashed"></div>
+<!--               <div id="uploader-demo">
+                <div id="fileList" class="uploader-list"></div>
+                <div id="filePicker">选择图片</div>
+              </div> -->
+              <div class="attachment">
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="id_card_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="id_card_image" style="display: none;"> <img alt="image" id="id_card_img" class="img-responsive"> </div>
+                      <div class="file-name"> 身份证正面 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="id_cardFile" name="id_cardFile" onchange="ajaxFileUpload('id_card')" accept="image/*">
+                    <input type="hidden" id="id_card" name="id_card" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="id_f_card_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="id_f_card_image" style="display: none;"> <img alt="image" id="id_f_card_img" class="img-responsive"> </div>
+                      <div class="file-name"> 身份证反面 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="id_f_cardFile" name="id_f_cardFile" onchange="ajaxFileUpload('id_f_card')" accept="image/*">
+                    <input type="hidden" id="id_f_card" name="id_f_card" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="business_card_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="business_card_image" style="display: none;"> <img alt="image" id="business_card_img" class="img-responsive"> </div>
+                      <div class="file-name"> 营业执照 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="business_cardFile" name="business_cardFile" onchange="ajaxFileUpload('business_card')" accept="image/*">
+                    <input type="hidden" id="business_card" name="business_card" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="mer_logo_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="mer_logo_image" style="display: none;"> <img alt="image" id="mer_logo_img" class="img-responsive"> </div>
+                      <div class="file-name"> 商家Logo </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="mer_logoFile" name="mer_logoFile" onchange="ajaxFileUpload('mer_logo')" accept="image/*">
+                    <input type="hidden" id="mer_logo" name="mer_logo" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="s_business_card_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="s_business_card_image" style="display: none;"> <img alt="image" id="s_business_card_img" class="img-responsive"> </div>
+                      <div class="file-name"> 特殊行业许可证 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="s_business_cardFile" name="s_business_cardFile" onchange="ajaxFileUpload('s_business_card')" accept="image/*">
+                    <input type="hidden" id="s_business_card" name="s_business_card" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="storefront_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="storefront_image" style="display: none;"> <img alt="image" id="storefront_img" class="img-responsive"> </div>
+                      <div class="file-name">店面门头照</div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="storefrontFile" name="storefrontFile" onchange="ajaxFileUpload('storefront')" accept="image/*">
+                    <input type="hidden" id="storefront" name="storefront" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="interior_1_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="interior_1_image" style="display: none;"> <img alt="image" id="interior_1_img" class="img-responsive"> </div>
+                      <div class="file-name"> 内景照一 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="interior_1File" name="interior_1File" onchange="ajaxFileUpload('interior_1')" accept="image/*">
+                    <input type="hidden" id="interior_1" name="interior_1" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="interior_2_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="interior_2_image" style="display: none;"> <img alt="image" id="interior_2_img" class="img-responsive"> </div>
+                      <div class="file-name"> 内景照二 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="interior_2File" name="interior_2File" onchange="ajaxFileUpload('interior_2')" accept="image/*">
+                    <input type="hidden" id="interior_2" name="interior_2" /> </div>
+                </div>
+                <div class="file-box">
+                  <div class="file">
+                    <a href="#"> <span class="corner"></span>
+                      <div class="icon" id="interior_3_icon"> <i class="fa fa-file"></i> </div>
+                      <div class="image" id="interior_3_image" style="display: none;"> <img alt="image" id="interior_3_img" class="img-responsive"> </div>
+                      <div class="file-name"> 内景照三 </div>
+                    </a>
+                  </div>
+                  <div class="file">
+                    <input type="file" id="interior_3File" name="interior_3File" onchange="ajaxFileUpload('interior_3')" accept="image/*">
+                    <input type="hidden" id="interior_3" name="interior_3" /> </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 引入my97日期时间控件 -->
+
+
+<!-- 扩展表单校验 -->
+
+
+<!-- 三级联动 -->
+<script type="text/javascript" src="/jslib/select/area.js" charset="utf-8"></script>
+
+<!-- ajax 文件上传 -->
+<script type="text/javascript" src="/jslib/ajaxfileupload.js" charset="utf-8"></script>
+<script type="text/javascript" src="/jslib/extJquery.js" charset="utf-8"></script>
+
+
+<link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="/kindeditor-4.1.10//kindeditor-min.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10//lang/zh_CN.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/layer/layer.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/pace/pace.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/contabs.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/hplus.min.js?v=4.1.0"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/jeditable/jquery.jeditable.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/jquery.spinner.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.metadata.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/validate/messages_zh.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/bootstrap-treeview.js"></script>
+
+<script src="https://www.beizijinfu.com/hplus/js/plugins/treeview/jsonToTree.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/jsTree/jstree.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/select/bootstrap-select.min.js"></script>
+<script src="https://www.beizijinfu.com/js/colResizable-1.6.js"></script>
+<script src="https://www.beizijinfu.com/js/ajaxfileupload.js"></script>
+<script src="https://www.beizijinfu.com/js/beizi.validate.js"></script>
+<script src="hplus/plugins/webuploader/webuploader.min.js"></script>
+
+
+<script type="text/javascript">
+  $(window).load(function() {
+    $("#loading").fadeOut();
+  });
+
+
+
+  //公共方法
+  var pubMethod = {
+    bind: function(control, code) {
+      if (control == '' || code == '') {
+        return;
+      }
+
+      $('#' + control).combobox({
+        url: '/dictionary/combox?code=' + code,
+        method: 'get',
+        valueField: 'id',
+        textField: 'text',
+        editable: false,
+        panelHeight: 'auto',
+        required: true
+      });
+    }
+  }
+
+  function logout() {
+    $.post('/admin/logout.htm', function(result) {
+      if (result.success) {
+        window.location.href = '/index.htm';
+      }
+    }, 'json');
+  }
+
+  function editUserPwd() {
+    parent.layer.open({
+      type: 2,
+      title: "修改密码",
+      shade: 0.5,
+      area: ['900px', '500px'],
+      shift: 2,
+      btn: ['提交', '关闭'],
+      yes: function(index, layero) {
+        var framefrom = parent.window.frames["layui-layer-iframe" + index];
+        framefrom.submitForm();
+      },
+      cancel: function(index, layero) {
+
+      },
+      content: ['/user/editPwdPage.htm?id=907902763860750336'],
+      end: function(result) {
+        getfun();
+      }
+    });
+
+  }
+
+  function FormatAfterDotNumber(ValueString, nAfterDotNum) {
+    var ValueString, nAfterDotNum;
+    var resultStr, nTen;
+    ValueString = "" + ValueString + "";
+    strLen = ValueString.length;
+    dotPos = ValueString.indexOf(".", 0);
+    if (dotPos == -1) {
+      resultStr = ValueString + ".";
+      for (i = 0; i < nAfterDotNum; i++) {
+        resultStr = resultStr + "0";
+      }
+      return resultStr;
+    } else {
+      if ((strLen - dotPos - 1) >= nAfterDotNum) {
+        nAfter = dotPos + nAfterDotNum + 1;
+        nTen = 1;
+        for (j = 0; j < nAfterDotNum; j++) {
+          nTen = nTen * 10;
+        }
+        resultStr = Math.round(parseFloat(ValueString) * nTen) / nTen;
+        return resultStr;
+      } else {
+        resultStr = ValueString;
+        for (i = 0; i < (nAfterDotNum - strLen + dotPos + 1); i++) {
+          resultStr = resultStr + "0";
+        }
+        return resultStr;
+      }
+    }
+  }
+</script>
+
+
+<script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/jquery.treegrid.bootstrap3.js"></script>
+
+<script src="https://www.beizijinfu.com/hplus/js/bootstrap-number-input.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/toastr/toastr.min.js"></script>
+<script src="https://www.beizijinfu.com/hplus/js/plugins/layer/laydate/laydate.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/beizi.validate.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+  var _data = [];
+  $(function() {
+    // 初始化Web Uploader
+    var uploader = WebUploader.create({
+      // 选完文件后，是否自动上传。
+      auto: false,
+      // swf文件路径
+      swf: 'hplus/plugins/webuploader/Uploader.swf',
+      // 文件接收服务端。
+      server: 'index.html',
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePicker',
+      // 只允许选择图片文件。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+      }
+    });
+    uploader.on('fileQueued', function(file) {
+      var $li = $('<div id="' + file.id + '" class="file-item thumbnail remove-this">' + '<img>' + '<div class="info">' + file.name + '</div>' + '</div>'),
+        $img = $li.find('img');
+        $li.bind('click',function(){
+          console.log(file)
+          uploader.removeFile(file,true);
+        })
+      // $list为容器jQuery实例
+      $('#fileList').append($li);
+      // 创建缩略图
+      // 如果为非图片文件，可以不用调用此方法。
+      // thumbnailWidth x thumbnailHeight 为 100 x 100
+      uploader.makeThumb(file, function(error, src) {
+        if (error) {
+          $img.replaceWith('<span>不能预览</span>');
+          return;
+        }
+        $img.attr('src', src);
+      }, 200, 150);
+    });
+
+    // _init_area("province", "city", "county");
+    // setPro("");
+    // setCity("");
+    // setCounty("");
+    // _init_category();
+    // change_superior('1');
+
+    $('#bankName').change(function() {
+      var _bankCode = $(this).find("option:selected").val();
+      var _bankName = $(this).find("option:selected").text();
+      $('#bank_code').val(_bankCode);
+      $('#bank_name').val(_bankName);
+    });
+
+
+
+  });
+
+  function _init_category() {
+    change_category(null, $("#category1"), null, '', '1');
+  }
+
+  function change_category(pobj, obj, obj2, value, index) {
+
+    var _url = '/userchannel/categorys.htm';
+    if (pobj != null) {
+      _url += "?pcode=" + pobj.val();
+    }
+
+    $.ajax({
+      type: 'post',
+      url: _url,
+      dataType: 'json',
+      success: function(data) {
+        obj.empty();
+        if (obj2 != null) {
+          obj2.empty();
+        }
+        obj.append(
+          $('<option></option>')
+          .text("请选择行业类目")
+          .val("")
+        );
+        $.each(data.rows, function(index, html) {
+          obj.append(
+            $('<option></option>')
+            .text(html.name)
+            .val(html.code)
+          );
+        });
+
+        if (value != '' && value != null) {
+          obj.val(value);
+          if (index == '1') {
+            change_category($("#category1"), $("#category2"), $("#category3"), '', '2');
+          } else if (index == '2') {
+            change_category($("#category2"), $("#category3"), null, '', '3');
+          }
+
+        }
+      },
+      error: function(error) {
+        console.log("Error:");
+        console.log(error);
+      }
+
+    });
+  }
+
+  function change_superior(type) {
+    var _url = '/user/getCpInfo.htm';
+
+    _url += "?orgid=" + $("#pid").val();
+    $.ajax({
+      type: 'post',
+      url: _url,
+      dataType: 'json',
+      success: function(data) {
+        $("#superior").empty();
+        $("#superior").append(
+          $('<option></option>')
+          .text("请选合作伙伴")
+          .val("")
+        );
+        $.each(data.rows, function(index, html) {
+          $("#superior").append(
+            $('<option></option>')
+            .text(html.MER_NAME)
+            .val(html.ID)
+          );
+        });
+
+        if (type == '1') {
+          $("#superior").val('');
+        }
+      },
+      error: function(error) {
+        console.log("Error:");
+        console.log(error);
+      }
+
+    });
+  }
+
+  function ajaxFileUpload(id) {
+    var fileName = $("#" + id + "File").val();
+    var AllImgExt = ".jpg|.jpeg|.gif|.bmp|.png|"; //全部图片格式类型 
+    FileExt = fileName.substr(fileName.lastIndexOf(".")).toLowerCase();
+    if (AllImgExt.indexOf(FileExt + "|") != -1) {
+      $.ajaxFileUpload({
+        url: '' + '/img/upload.htm?dir=test', //用于文件上传的服务器端请求地址
+        secureuri: false, //是否需要安全协议，一般设置为false
+        fileElementId: id + "File", //文件上传域的ID
+        dataType: 'json', //返回值类型 一般设置为json
+        success: function(result, status) //服务器成功响应处理函数
+          {
+
+            if (result.success) {
+              $("#" + id + "_icon").hide();
+              $("#" + id + "_img").attr('src', "" + result.imgUrl);
+              $("#" + id + "_image").show();
+              $("#" + id).val(result.imgName);
+
+            }
+          },
+        error: function(result, status, e) //服务器响应失败处理函数
+          {
+            showMsg(e);
+          }
+      })
+    } else {
+      showMsg("选择文件类型不对");
+    }
+  }
+
+
+  function submitForm() {
+    if ($("#editForm").valid()) {
+
+      var _bankCode = $("#bankName").find("option:selected").val();
+      var _bankName = $("#bankName").find("option:selected").text();
+
+      $('bank_code').val(_bankCode);
+      $('bank_name').val(_bankName);
+
+      var _data = $("#editForm").serialize();
+      _data = _data.replace(/\\+/g, " ");
+
+      $.ajax({
+        cache: true,
+        type: "POST",
+        url: '/user/edit.htm',
+        data: _data,
+        async: false,
+        error: function(request) {
+          alert(request);
+          parent.layer.alert(result.desc, {
+            skin: 'layui-layer-lan'
+          });
+        },
+        success: function(result) {
+          result = $.parseJSON(result);
+          var code = result.code;
+
+          if (code == 1) {
+            parent.layer.alert(result.msg, {
+              skin: 'layui-layer-lan'
+            });
+          } else {
+            toastr.info('Are you the 6 fingered man?')
+            parent.layer.alert(result.msg, {
+              skin: 'layui-layer-lan'
+            });
+          }
+        }
+      });
+    }
+  }
+
+  function getTreeDate() {
+    $.ajax({
+      type: 'post',
+      url: '/merchant/trees.htm',
+      dataType: 'json',
+      success: function(data) {
+        var nodes = data;
+
+        function walk(nodes, _data) {
+          if (!nodes) {
+            return;
+          }
+          $.each(nodes, function(index, node) {
+            var obj = {
+              id: node.id,
+              text: node.text
+            };
+            if (node.children.length > 0) {
+              obj.nodes = [];
+              walk(node.children, obj.nodes);
+            }
+            _data.push(obj);
+          });
+        }
+        walk(nodes, _data);
+        loadTree(_data);
+      },
+      error: function(error) {
+        console.log("Error:");
+        console.log(error);
+      }
+    });
+  }
+
+
+  function loadTree(_in_date) {
+
+    var options = {
+      bootstrap2: false,
+      showTags: true,
+      levels: 5,
+      showCheckbox: false,
+      checkedIcon: "glyphicon glyphicon-check",
+      data: _in_date,
+      onNodeSelected: function(event, data) {
+        $("#pname").val(data.text);
+        $("#pid").val(data.id);
+        $("#organization_treeview").hide();
+        change_superior();
+      }
+    };
+    $('#organization_treeview').treeview(options);
+  }
+</script>
+
+</html>

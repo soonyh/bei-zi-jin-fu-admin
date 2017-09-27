@@ -109,14 +109,13 @@
               <span class="label label-primary" style="line-height:19px;"><i class="fa fa-rmb"></i> 交易金额：<b>0</b>元</span>
               <span class="label label-danger" style="line-height:19px;"><i class="fa fa-retweet"></i> 退款金额：<b>0</b>元</span>
               <span class="label label-info" style="line-height:19px;"><i class="fa fa-text-o"></i> 订单数：<b>0</b>笔</span>
-              <span class="label" style="line-height:19px; cursor:pointer;" type="button" onclick="$('#search-bar').toggleClass('hidden')"><i class="fa fa-search"></i> 展开</span>
             </div>
             <ul class="category-list" style="padding: 0;" id="leftAppMuen">
               <div class="ibox-tools" id="showdiv" style="display: none;"> <a href="https://www.beizijinfu.com/userapp/mian.htm" class="btn btn-xs btn-primary">返回</a> </div>
             </ul>
           </div>
           <div class="ibox-content">
-            <form role="form" class="row hidden animated fadeIn" id="search-bar">
+            <form role="form" class="row animated fadeIn" id="search-bar">
               <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6">
                 <label for="" class="form-label">&nbsp;&nbsp;订单号：</label>
                 <input type="text" placeholder="请输入" id="trade_no" class="form-control">
@@ -148,7 +147,7 @@
                               <option value="3">扫码</option>
                             </select>
                         </div> -->
-              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6">
+              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6 toggle-hidden animated fadeIn hidden">
                 <label for="" class="form-label">支付通道：</label>
                 <select class="form-control" id="plat">
                   <option value="">全部</option>
@@ -157,7 +156,7 @@
                   <option value="WX">官方微信</option>
                 </select>
               </div>
-              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6">
+              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6 toggle-hidden animated fadeIn hidden">
                 <label for="" class="form-label">交易金额：</label>
                 <div class="input-group">
                   <select class="form-control" id="moneyWhere" style="width:80px;">
@@ -168,7 +167,7 @@
                   <input type="number" placeholder="金额" id="trade_amount" class="form-control">
                 </div>
               </div>
-              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6">
+              <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6 toggle-hidden animated fadeIn hidden">
                 <label for="" class="form-label">应用名称：</label>
                 <select id="appid" name="appid" class="form-control">
                   <option value="">请选择应用....</option>
@@ -178,7 +177,8 @@
               <div class="form-group col-lg-3 col-md-3  col-sm-4 col-xs-6" style="padding-top:23px;">
                 <button class="btn btn-primary" type="button" onclick="getfun();">查询</button>
                 <button class="btn btn-default btn-outline" type="button" onclick="fromReset();">重置</button>
-                <a href="javascript:;" id="export" class="btn">导出订单</a>
+                <a href="javascript:;" id="export" class="" style="line-height:34px; margin-left:5px;">导出订单</a>
+                <a href="javascript:;" id="export" class=""  style="line-height:34px; margin-left:5px;" onclick="$('.toggle-hidden').toggleClass('hidden')">更多条件</a>
               </div>
             </form>
             <table id="dataGrid" class="table table-striped  table-hover table-bordered table-nowrap">
@@ -208,9 +208,6 @@
       </div>
     </div>
   </div>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <link rel="shortcut icon" href="https://www.beizijinfu.com/style/images/index/favicon.png" />
   <script src="https://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script>
   <script src="https://www.beizijinfu.com/hplus/js/bootstrap.min.js?v=3.3.6"></script>
 

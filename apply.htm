@@ -10,7 +10,7 @@
 
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="shortcut icon" href="https://www.beizijinfu.com/hplus/favicon.ico">
 
   <!-- 引入jQuery -->
@@ -39,33 +39,90 @@
   <meta http-equiv="X-UA-Compatible" content="edge" />
   <title>列表页</title>
   <style type="text/css">
-    .fa {
-      font-size: 30px;
-    }
-    h3 {
-      width: 300px;
-    }
-    address {}
   </style>
 </head>
 
 <body class="gray-bg">
   <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="col-sm-12">
-      <div class="ibox float-e-margins">
-        <div class="panel panel-success">
-          <div class="panel-body">
-            <div class="">
-              <a href="javascript:void(0);" onclick="goToNext();" class="btn btn-primary " style="float:right ;margin-right:20px; ">下一步</a>
-              <a href="javascript:void(0);" onclick="goFirst();" class="btn btn-default " style="float:right ;margin-right:20px; ">返回</a>
+    <!--     <div class="row">
+      <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+          <div class="panel panel-success">
+            <div class="panel-body">
+              <div class="">
+                <a href="javascript:void(0);" onclick="goToNext();" class="btn btn-primary " style="float:right ;margin-right:20px; ">下一步</a>
+                <a href="javascript:void(0);" onclick="goFirst();" class="btn btn-default " style="float:right ;margin-right:20px; ">返回</a>
+              </div>
+              <h3>根据您的支付应用，选择需要的场景</h3>
             </div>
-            <h3>根据您的支付应用，选择需要的场景</h3>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="ibox float-e-margins">
+      <div class="ibox-title ibox-title-red">
+        为您推荐以下支付渠道
+      </div>
+      <div class="ibox-content">
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="pay-box widget red-bg p-lg text-center">
+              <i class="fa fa-check-circle" style="display:block;"></i>
+              <div class="m-b-md">
+                <i class="fa fa-android fa-4x"></i>
+                <h3 class="font-bold no-margins">手机APP支付 </h3>
+                <small>用户在商家APP内进行支付</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="pay-box widget lazur-bg p-lg text-center">
+              <i class="fa fa-check-circle" style="display:block;"></i>
+              <div class="m-b-md">
+                <i class="fa fa-desktop fa-4x"></i>
+                <h3 class="font-bold no-margins">电脑网页支付 </h3>
+                <small>用户在商家PC网站进行支付</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="pay-box widget yellow-bg p-lg text-center">
+              <i class="fa fa-check-circle"></i>
+              <div class="m-b-md">
+                <i class="fa fa-mobile fa-4x"></i>
+                <h3 class="font-bold no-margins">手机网页支付 </h3>
+                <small>用户在商家手机网站进行支付</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="pay-box widget navy-bg p-lg text-center">
+              <i class="fa fa-check-circle"></i>
+              <div class="m-b-md">
+                <i class="fa fa-wechat fa-4x"></i>
+                <h3 class="font-bold no-margins">微信公众号支付 </h3>
+                <small>用户在商家微信公众号进行支付</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="pay-box widget gray-bg p-lg text-center">
+              <i class="fa fa-check-circle"></i>
+              <div class="m-b-md">
+                <i class="fa fa-whatsapp fa-4x"></i>
+                <h3 class="font-bold no-margins">微信小程序支付 </h3>
+                <small>用户在商家微信公众号小程序进行支付</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row">
+    <div class="actions text-center">
+      <a href="javascript:void(0);" onclick="goToNext();" class="btn btn-primary">下一步</a>
+      <a href="javascript:void(0);" onclick="goFirst();" class="btn btn-white">返回</a>
+    </div>
+    <!--     <div class="row">
       <div class="col-sm-12" id="scene_selector">
 
         <div class="col-sm-4">
@@ -164,7 +221,7 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
   </div>
 
@@ -173,7 +230,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="https://www.beizijinfu.com/style/images/index/favicon.png" />
 
 <script src="https://www.beizijinfu.com/hplus/js/jquery-2.2.3.min.js"></script>
