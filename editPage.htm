@@ -30,18 +30,15 @@
 <body class="gray-bg">
   <div class="wrapper wrapper-content animated fadeInRight">
     <div class="alert alert-danger alert-dismissable">
-                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        用户名错误
-   </div>
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      用户名错误
+    </div>
     <div class="row">
       <div class="col-xs-12">
         <form method="get" class="" id="editForm">
           <div class="ibox">
             <div class="ibox-title ibox-title-red">
               <h5>个人资料</h5>
-              <div class="pull-right" style="margin-top:-4px">
-                <a href="#" onclick="submitForm();" class="btn btn-primary btn-sm">保存</a>
-              </div>
             </div>
             <div class="ibox-content">
               <h3 class="form-section">基本信息</h3>
@@ -131,7 +128,7 @@
 
               <h3 class="form-section">上传图片</h3>
               <div class="hr-line-dashed"></div>
-<!--               <div id="uploader-demo">
+              <!--               <div id="uploader-demo">
                 <div id="fileList" class="uploader-list"></div>
                 <div id="filePicker">选择图片</div>
               </div> -->
@@ -250,6 +247,9 @@
           </div>
         </form>
       </div>
+    </div>
+    <div class="actions text-center">
+       <a href="#" onclick="submitForm();" class="btn btn-primary btn-w-m">保存</a>
     </div>
   </div>
 </body>
@@ -425,11 +425,11 @@
     uploader.on('fileQueued', function(file) {
       var $li = $('<div id="' + file.id + '" class="file-item thumbnail remove-this">' + '<img>' + '<div class="info">' + file.name + '</div>' + '</div>'),
         $img = $li.find('img');
-        $li.bind('click',function(){
+      $li.bind('click', function() {
           console.log(file)
-          uploader.removeFile(file,true);
+          uploader.removeFile(file, true);
         })
-      // $list为容器jQuery实例
+        // $list为容器jQuery实例
       $('#fileList').append($li);
       // 创建缩略图
       // 如果为非图片文件，可以不用调用此方法。
