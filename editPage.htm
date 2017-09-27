@@ -128,11 +128,147 @@
 
               <h3 class="form-section">上传图片</h3>
               <div class="hr-line-dashed"></div>
-              <!--               <div id="uploader-demo">
-                <div id="fileList" class="uploader-list"></div>
-                <div id="filePicker">选择图片</div>
-              </div> -->
-              <div class="attachment">
+              <div class="row">
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="id_card_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="id_card_image" style="display: none;"> <img alt="image" id="id_card_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 身份证正面 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="id_cardFile" name="id_cardFile" onchange="ajaxFileUpload('id_card')" accept="image/*">
+                      <input type="hidden" id="id_card" name="id_card" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="id_f_card_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="id_f_card_image" style="display: none;"> <img alt="image" id="id_f_card_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 身份证反面 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="id_f_cardFile" name="id_f_cardFile" onchange="ajaxFileUpload('id_f_card')" accept="image/*">
+                      <input type="hidden" id="id_f_card" name="id_f_card" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="business_card_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="business_card_image" style="display: none;"> <img alt="image" id="business_card_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 营业执照 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="business_cardFile" name="business_cardFile" onchange="ajaxFileUpload('business_card')" accept="image/*">
+                      <input type="hidden" id="business_card" name="business_card" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle" style="display:block"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="mer_logo_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="mer_logo_image" style="display: none;"> <img alt="image" id="mer_logo_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 商家Logo </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="mer_logoFile" name="mer_logoFile" onchange="ajaxFileUpload('mer_logo')" accept="image/*">
+                      <input type="hidden" id="mer_logo" name="mer_logo" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle" style="display:block"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="s_business_card_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="s_business_card_image" style="display: none;"> <img alt="image" id="s_business_card_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 特殊行业许可证 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="s_business_cardFile" name="s_business_cardFile" onchange="ajaxFileUpload('s_business_card')" accept="image/*">
+                      <input type="hidden" id="s_business_card" name="s_business_card" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="storefront_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="storefront_image" style="display: none;"> <img alt="image" id="storefront_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader">店面门头照</a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="storefrontFile" name="storefrontFile" onchange="ajaxFileUpload('storefront')" accept="image/*">
+                      <input type="hidden" id="storefront" name="storefront" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="interior_1_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="interior_1_image" style="display: none;"> <img alt="image" id="interior_1_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 内景照一 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="interior_1File" name="interior_1File" onchange="ajaxFileUpload('interior_1')" accept="image/*">
+                      <input type="hidden" id="interior_1" name="interior_1" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="interior_2_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="interior_2_image" style="display: none;"> <img alt="image" id="interior_2_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 内景照二 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="interior_2File" name="interior_2File" onchange="ajaxFileUpload('interior_2')" accept="image/*">
+                      <input type="hidden" id="interior_2" name="interior_2" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-1-5 col-xs-12 col-sm-4">
+                  <div class="file-box">
+                    <div class="file"> <i class="fa fa-check-circle"></i>
+                      <a href="#"> <span class="corner"></span>
+                        <div class="icon" id="interior_3_icon"> <i class="fa fa-file"></i> </div>
+                        <div class="image" id="interior_3_image" style="display: none;"> <img alt="image" id="interior_3_img" class="img-responsive"> </div>
+                        <div class="file-name"><a href="javascript:;" class="btn btn-info btn-block uploader"> 内景照三 </a>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="file hidden">
+                      <input type="file" id="interior_3File" name="interior_3File" onchange="ajaxFileUpload('interior_3')" accept="image/*">
+                      <input type="hidden" id="interior_3" name="interior_3" /> </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <!--               <div class="attachment">
                 <div class="file-box">
                   <div class="file">
                     <a href="#"> <span class="corner"></span>
@@ -242,14 +378,14 @@
                     <input type="hidden" id="interior_3" name="interior_3" /> </div>
                 </div>
                 <div class="clearfix"></div>
-              </div>
+              </div> -->
             </div>
           </div>
         </form>
       </div>
     </div>
     <div class="actions text-center">
-       <a href="#" onclick="submitForm();" class="btn btn-primary btn-w-m">保存</a>
+      <a href="#" onclick="submitForm();" class="btn btn-primary btn-w-m">保存</a>
     </div>
   </div>
 </body>
@@ -301,6 +437,7 @@
 <script type="text/javascript">
   $(window).load(function() {
     $("#loading").fadeOut();
+
   });
 
 
@@ -404,45 +541,11 @@
 <script type="text/javascript">
   var _data = [];
   $(function() {
-    // 初始化Web Uploader
-    var uploader = WebUploader.create({
-      // 选完文件后，是否自动上传。
-      auto: false,
-      // swf文件路径
-      swf: 'hplus/plugins/webuploader/Uploader.swf',
-      // 文件接收服务端。
-      server: 'index.html',
-      // 选择文件的按钮。可选。
-      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-      pick: '#filePicker',
-      // 只允许选择图片文件。
-      accept: {
-        title: 'Images',
-        extensions: 'gif,jpg,jpeg,bmp,png',
-        mimeTypes: 'image/*'
-      }
-    });
-    uploader.on('fileQueued', function(file) {
-      var $li = $('<div id="' + file.id + '" class="file-item thumbnail remove-this">' + '<img>' + '<div class="info">' + file.name + '</div>' + '</div>'),
-        $img = $li.find('img');
-      $li.bind('click', function() {
-          console.log(file)
-          uploader.removeFile(file, true);
-        })
-        // $list为容器jQuery实例
-      $('#fileList').append($li);
-      // 创建缩略图
-      // 如果为非图片文件，可以不用调用此方法。
-      // thumbnailWidth x thumbnailHeight 为 100 x 100
-      uploader.makeThumb(file, function(error, src) {
-        if (error) {
-          $img.replaceWith('<span>不能预览</span>');
-          return;
-        }
-        $img.attr('src', src);
-      }, 200, 150);
-    });
 
+    $('body').on('click','.uploader',function(){
+      $(this).closest('.file').next('.file').find('input[type="file"]').click()
+    })
+ 
     // _init_area("province", "city", "county");
     // setPro("");
     // setCity("");
@@ -548,6 +651,7 @@
   }
 
   function ajaxFileUpload(id) {
+    $('#'+id).closest('.file-box').find('.fa-check-circle').show();
     var fileName = $("#" + id + "File").val();
     var AllImgExt = ".jpg|.jpeg|.gif|.bmp|.png|"; //全部图片格式类型 
     FileExt = fileName.substr(fileName.lastIndexOf(".")).toLowerCase();
