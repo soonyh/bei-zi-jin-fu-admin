@@ -399,4 +399,4 @@ a.travis {
 /* file-box */
 .file-box {width: 100%;}
 .file-box .file{margin-right:0;}
-.file-box .fa-check-circle{color:#4cae4c; position: absolute; font-size:18px; top:10px; right: 10px; display: none;}
+.file-box .fa-check-circle{color:#23c6c8; position: absolute; font-size:18px; top:10px; right: 10px; display: none;}
